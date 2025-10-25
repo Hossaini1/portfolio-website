@@ -1,11 +1,12 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { getDictionary } from "./dictionaries";
+import ContactSection from "@/components/contact/contact-section";
 
-// ✅ LAZY LOADING für alle schweren Komponenten
+
 const NavbarComponent = dynamic(() => import("@/components/navbar/navbar-component"), {
   loading: () => <div className="h-16 bg-background animate-pulse" />,
-  ssr: true // ✅ TRUE für statische Sites
+  ssr: true 
 });
 
 const HeroSection = dynamic(() => import("@/components/hero/hero-section"), {
@@ -20,7 +21,7 @@ const HeroSection = dynamic(() => import("@/components/hero/hero-section"), {
   ssr: true
 });
 
-const IntegrationsSection = dynamic(() => import("@/components/integrations/integrations-section"), {
+const AboutSection = dynamic(() => import("@/components/integrations/about-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
@@ -34,7 +35,7 @@ const IntegrationsSection = dynamic(() => import("@/components/integrations/inte
   ssr: true
 });
 
-const FeaturesSection = dynamic(() => import("@/components/features/features-section"), {
+const ProjectsSection = dynamic(() => import("@/components/projectssection/projects-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-12 mx-auto animate-pulse"></div>
@@ -72,7 +73,6 @@ const FooterSection = dynamic(() => import("@/components/footer/footer-section")
   ssr: true
 });
 
-// ✅ OPTIMIERTES DICTIONARY LOADING mit Error Handling
 async function getPageData(lang: "en" | "de" | "fa") {
   try {
     const dictionary = await getDictionary(lang);
@@ -85,7 +85,6 @@ async function getPageData(lang: "en" | "de" | "fa") {
   }
 }
 
-// ✅ HAUPTPAGE KOMPONENTE
 export default async function Home({
   params,
 }: {
@@ -98,7 +97,7 @@ export default async function Home({
     <>
       <header>
         <Suspense fallback={<div className="h-16 bg-background animate-pulse" />}>
-          <NavbarComponent t={t} />
+          <NavbarComponent t={t}/>
         </Suspense>
       </header>
       
@@ -113,16 +112,16 @@ export default async function Home({
           <HeroSection t={t.Hero} />
         </Suspense>
         
-        <Suspense fallback={<div>Loading integrations...</div>}>
-          <IntegrationsSection />
+        <Suspense fallback={<div>Loading about section...</div>}>
+          <AboutSection t={t.About} />
         </Suspense>
         
-        <Suspense fallback={<div>Loading features...</div>}>
-          <FeaturesSection />
+        <Suspense fallback={<div>Loading projects section...</div>}>
+          <ProjectsSection t={t.ProjectsSection} />
         </Suspense>
         
         <Suspense fallback={<div>Loading contact...</div>}>
-          <Contact02Page />
+          <ContactSection t={t.Contact} />
         </Suspense>
       </main>
       
@@ -135,7 +134,6 @@ export default async function Home({
   );
 }
 
-// ✅ STATISCHE GENERATION FÜR PERFORMANCE
 export async function generateStaticParams() {
   return [
     { lang: "en" },
@@ -144,5 +142,4 @@ export async function generateStaticParams() {
   ];
 }
 
-// ✅ ISR FÜR UPDATES
-export const revalidate = 3600; // 1 Stunde
+export const revalidate = 3600; 

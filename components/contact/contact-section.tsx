@@ -4,14 +4,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { ContactType } from "@/types/dictionary-types";
 import { MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 
-const ContactSection = () => (
+const emailAdresse ='1989hossaini1@gmail.com'
+
+const ContactSection = ({t}:{t:ContactType}) => (
   <div className="flex items-center justify-center py-16">
     <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
-      <h2 className="uppercase font-semibold text-2xl">
-        Contact Us
+      <h2 className="uppercase font-semibold text-3xl">
+        {t?.title?? "Contact Me"}
       </h2>
       <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
@@ -19,15 +22,15 @@ const ContactSection = () => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MailIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Email</h3>
+            <h3 className="mt-6 font-semibold text-xl">{t?.email?.title ?? "Email"}</h3>
             <p className="my-2.5 text-muted-foreground">
-              Our friendly team is here to help.
+              {t?.email?.description ?? "For questions, feel free to send me an email"}
             </p>
             <Link
               className="font-medium text-primary"
-              href="mailto:akashmoradiya3444@gmail.com"
+              href="mailto:a@gmail.com"
             >
-              akashmoradiya3444@gmail.com
+             a@gmail.com
             </Link>
           </div>
 
@@ -35,9 +38,9 @@ const ContactSection = () => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MapPinIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Office</h3>
+            <h3 className="mt-6 font-semibold text-xl">{t?.office?.title ?? "Office"}</h3>
             <p className="my-2.5 text-muted-foreground">
-              Come say hello at our office HQ.
+              {t?.office?.subtitle?? "Feel free to drop by my office."}
             </p>
             <Link
               className="font-medium text-primary"

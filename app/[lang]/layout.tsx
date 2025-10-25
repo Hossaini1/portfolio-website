@@ -31,7 +31,7 @@ const poppins = Poppins({
 
 // };
 
-// dir={lang === "fa" ? "rtl" : "ltr"}
+// 
 
 export async function generateMetadata({
   params,
@@ -47,9 +47,9 @@ export async function generateMetadata({
   };
 
   const descriptions = {
-    en: "Full Stack Developer Portfolio - Modern web applications with React, Next.js and cutting-edge technologies",
-    de: "Full Stack Developer Portfolio - Moderne Webanwendungen mit React, Next.js und innovativen Technologien",
-    fa: "نمونه کارهای توسعه دهنده فول استک - برنامه های وب مدرن با React, Next.js و تکنولوژی های پیشرفته",
+    en: "Full Stack Developer Portfolio - Modern web applications cutting-edge technologies",
+    de: "Full Stack Developer Portfolio - Moderne Webanwendungen mit innovativen Technologien",
+    fa: "وبسایت شخصی نمونه کارهای توسعه دهنده فول استک - برنامه های وب مدرن",
   };
 
   return {
@@ -87,9 +87,10 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning >
       <body
-        className={`antialiased ${montserrat.variable} ${poppins.variable} antialiased`}
+        className={`antialiased ${montserrat.variable} ${poppins.variable} antialiased`} 
+        dir={lang === "fa" ? "rtl" : "ltr"} 
       >
         <ThemeProvider
           attribute="class"

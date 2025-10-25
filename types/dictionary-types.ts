@@ -1,16 +1,4 @@
-//   export interface LanguagesType {
-//     en: string;
-//     de: string;
-//     fa: string;
-//   };
-
-// export interface NavType {
-//   home: string;
-//   about: string;
-//   projects: string;
-//   contact: string;
-//   blogs: string;
-// }
+import { JSX } from "react";
 
 export interface NavAndLanguagesType {
   Languages: {
@@ -79,5 +67,52 @@ export interface HeroType {
       count: string;
       label: string;
     };
+  };
+}
+
+export interface AboutType {
+  title: string;
+  description: string;
+  frontend: {
+    title: string;
+    subtitle: string;
+  };
+  backend: {
+    title: string;
+    subtitle: string;
+  };
+}
+
+export interface ProjectsSectionType {
+  title: string;
+  subtitle: string;
+
+  Projects: {
+    id: number;
+    title: string;
+    description: string;
+    category: string;
+    technologies: string[];
+  }[];
+}
+
+export interface ContactType {
+  title: string;
+  form: {
+    lastName: string;
+    firstName: string;
+    email: string;
+    message: string;
+    terms: string;
+    submit: string;
+  };
+  office: {
+    title: string;
+    subtitle: string;
+    address: string;
+  };
+  email: {
+    title: string;
+    description: string;
   };
 }

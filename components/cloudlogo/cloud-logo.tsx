@@ -1,75 +1,39 @@
 import { InfiniteSlider } from "./infinite-slider";
 import { ProgressiveBlur } from "./progressive-blur";
-import {
-  AngularIcon,
-  BootstrapIcon,
-  CSSIcon,
-  HTMLIcon,
-  JavaScriptIcon,
-  NextJSIcon,
-  ReactIcon,
-  TailwindcssIcon,
-  TypeScriptIcon,
-} from "../icons/Icons";
+import { CloudLogoType, logoLibrary } from "./logo-library";
 
-interface CloudLogoTypes {
-  name: string;
-  link: React.FC<{ className?: string }>;
+interface CloudLogoProps {
+  direction?: "left" | "right";
+  title?: string;
+  subtitle?: string;
+  logos: readonly CloudLogoType[]; 
 }
 
-export default function CloudLogo() {
-  const cloudLogos: CloudLogoTypes[] = [
-    {
-      name: "HTML icon",
-      link: HTMLIcon,
-    },
-    {
-      name: "CSS icon",
-      link: CSSIcon,
-    },
-    {
-      name: "Javascript icon",
-      link: JavaScriptIcon,
-    },
-    {
-      name: "React icon",
-      link: ReactIcon,
-    },
-    {
-      name: "Nextjs icon",
-      link: NextJSIcon,
-    },
-    {
-      name: "Typescript icon",
-      link: TypeScriptIcon,
-    },
-    {
-      name: "Angular icon",
-      link: AngularIcon,
-    },
-    {
-      name: "Tailwindcss icon",
-      link: TailwindcssIcon,
-    },
-    {
-      name: "Bootstrap icon",
-      link: BootstrapIcon,
-    },
-  ];
-
+export default function CloudLogo({ 
+  direction = "right", 
+  title = "Technologies",
+  subtitle = "I use:",
+  logos
+}: CloudLogoProps) {
   
   return (
     <section className="bg-background overflow-hidden pt-16">
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
-            <p className="text-end text-sm"><strong>Frontend</strong> Technologies <span className="block">I use: </span></p>
+            <p className="text-end text-sm">
+              <strong>{title}</strong> <span className="block">{subtitle}</span>
+            </p>
           </div>
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
-            <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-              {cloudLogos.map((logo) => {
+            <InfiniteSlider 
+              speedOnHover={20} 
+              speed={40} 
+              gap={112} 
+              reverse={direction === "left"}
+            >
+              {logos.map((logo) => {
                 const IconComponent = logo.link;
-
                 return (
                   <div
                     key={logo.name}
@@ -82,8 +46,6 @@ export default function CloudLogo() {
               })}
             </InfiniteSlider>
 
-            <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-            <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
             <ProgressiveBlur
               className="pointer-events-none absolute left-0 top-0 h-full w-20"
               direction="left"
@@ -100,3 +62,5 @@ export default function CloudLogo() {
     </section>
   );
 }
+
+export { logoLibrary };

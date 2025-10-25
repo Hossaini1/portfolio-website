@@ -64,5 +64,67 @@
         "label": "Years Experience"
       }
     }
+  },
+
+  "About": {
+    "title": "About Me",
+    "description": "Hi, I'm a Full Stack Web Developer\nPassionate about modern web technologies in developing user-friendly frontend applications and backend solutions. Always striving to write clean and efficient code and learn new technologies.\n\nWith an eye for detail and the ability to combine both technical and design aspects, I create digital experiences that not only function but also inspire. Every project is an opportunity for me to grow and innovate.",
+    "frontend": {
+      "title": "Frontend",
+      "subtitle": "Technologies I use:"
+    },
+    "backend": {
+      "title": "Backend",
+      "subtitle": "Technologies I use:"
+    }
+  },
+
+  "ProjectsSection": {
+    "title": "Few my latest works",
+    "subtitle": "Discover a selection of my recent projects",
+    "Projects": [
+      {
+        "id": 1,
+        "title": "Identify Opportunities",
+        "description": "Find untapped areas to explore effortlessly",
+        "category": "Web Development",
+        "technologies": ["React", "TypeScript", "Tailwind CSS"]
+      },
+      {
+        "id": 2,
+        "title": "Build Authority",
+        "description": "Craft content that resonates and inspires trust",
+        "category": "Content Strategy",
+        "technologies": ["Next.js", "CMS", "SEO"]
+      },
+      {
+        "id": 3,
+        "title": "Instant Insights",
+        "description": "Get actionable insights instantly at a glance",
+        "category": "Data Analytics",
+        "technologies": ["Data Visualization", "API", "Dashboard"]
+      }
+    ]
+  },
+
+  "Contact": {
+    "title": "Contact Me",
+    "form": {
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "email": "Email",
+      "message": "Message",
+      "terms": "I agree to the terms and conditions",
+      "submit": "Submit"
+    },
+    "office": {
+      "title": "Office",
+      "subtitle": "Kommen Sie gerne in meinem Büro vorbei.",
+      "address": "Germany, North Rhine-Westphalia"
+    },
+    "email": {
+      "title": "Email",
+      "description": "Questions? Just send an email"
+    }
   }
 }
