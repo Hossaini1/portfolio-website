@@ -1,0 +1,66 @@
+{
+  "Languages": {
+    "en": "English",
+    "de": "German",
+    "fa": "Farsi"
+  },
+  "Nav": {
+    "home": "خانه",
+    "about": "درباره من",
+    "projects": "پروژه‌ها",
+    "contact": "تماس",
+    "blogs": "وبلاگ‌ها",
+    "MegaMenu": {
+      "html": "HTML | ...به زودی",
+      "css": "CSS | ...به زودی",
+      "javascript": "Javascript | ...به زودی",
+      "git": "Git & Github | ...به زودی",
+      "react": "React | ...به زودی",
+      "nextjs": "Nextjs | ...به زودی",
+      "tailwind": "TailwindCSS | ...به زودی",
+      "bootstrap": "Bootstrap | ...به زودی",
+      "sass": "Sass | ...به زودی",
+      "nodejs": "NodeJs | ...به زودی",
+      "mongodb": "MongoDB | ...به زودی",
+      "php": "PHP | ...به زودی",
+      "laravel": "Laravel | ...به زودی",
+      "sql": "SQL & MySQL | ...به زودی",
+      "Descriptions": {
+        "html": "ساختار وبسایت",
+        "css": "استایل وبسایت",
+        "javascript": "محتوای پویا",
+        "git": "کنترل نسخه",
+        "react": "کامپوننت های UI",
+        "nextjs": "فریمورک فول استک",
+        "tailwind": "استایل های یوتیلیتی",
+        "bootstrap": "فریمورک UI",
+        "sass": "پیش پردازنده CSS",
+        "nodejs": "رانتایم بک اند",
+        "mongodb": "پایگاه داده NoSQL",
+        "php": "اسکریپت نویسی سرور",
+        "laravel": "فریمورک PHP",
+        "sql": "داده های رابطه ای"
+      }
+    }
+  },
+  "Hero": {
+    "name": "من علی نقی حسینی هستم",
+    "title": "توسعه دهنده فول استک",
+    "description": "علاقه‌مند به ایجاد برنامه‌های وب مدرن با فناوری‌های پیشرفته. آماده برای تبدیل ایده‌های شما به واقعیت با کد تمیز و راه‌حل‌های نوآورانه.",
+    "btn": "مشاهده کارهای من",
+    "Stats": {
+      "projects": {
+        "count": "۵۰+",
+        "label": "پروژه"
+      },
+      "technologies": {
+        "count": "۱۴+",
+        "label": "تکنولوژی"
+      },
+      "experience": {
+        "count": "۴+",
+        "label": "سال تجربه"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "Languages": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "fa": "Farsi"
+  },
+
+  "Nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "blogs": "Blogs",
+    "MegaMenu": {
+      "html": "HTML | Kommt bald...",
+      "css": "CSS | Kommt bald...",
+      "javascript": "Javascript | Kommt bald...",
+      "git": "Git & Github | Kommt bald...",
+      "react": "React | Kommt bald...",
+      "nextjs": "Nextjs | Kommt bald...",
+      "tailwind": "TailwindCSS | Kommt bald...",
+      "bootstrap": "Bootstrap | Kommt bald...",
+      "sass": "Sass | Kommt bald...",
+      "nodejs": "NodeJs | Kommt bald...",
+      "mongodb": "MongoDB | Kommt bald...",
+      "php": "PHP | Kommt bald...",
+      "laravel": "Laravel | Kommt bald...",
+      "sql": "SQL & MySQL | Kommt bald...",
+      "Descriptions": {
+        "html": "Webseiten Struktur",
+        "css": "Webseiten Gestaltung",
+        "javascript": "Dynamische Inhalte",
+        "git": "Versionskontrolle",
+        "react": "UI Komponenten",
+        "nextjs": "Fullstack Framework",
+        "tailwind": "Utility Styles",
+        "bootstrap": "UI Framework",
+        "sass": "CSS Preprocessor",
+        "nodejs": "Backend Runtime",
+        "mongodb": "NoSQL Datenbank",
+        "php": "Server Scripting",
+        "laravel": "PHP Framework",
+        "sql": "Relationale Daten"
+      }
+    }
+  },
+
+  "Hero": {
+    "name": "Ich bin Ali Naghi Hossaini",
+    "title": "Full Stack Developer",
+    "description": "Leidenschaftlich an der Erstellung moderner Webanwendungen mit modernsten Technologien. Bereit, Ihre Ideen mit sauberem Code und innovativen Lösungen zum Leben zu erwecken.",
+    "btn": "Meine Arbeit ansehen",
+    "Stats": {
+      "projects": {
+        "count": "50+",
+        "label": "Projekte"
+      },
+      "technologies": {
+        "count": "14+",
+        "label": "Technologien"
+      },
+      "experience": {
+        "count": "4+",
+        "label": "Jahre Erfahrung"
+      }
+    }
+  }
+}

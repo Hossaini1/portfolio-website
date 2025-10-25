@@ -1,0 +1,68 @@
+{
+  "Languages": {
+    "en": "English",
+    "de": "German",
+    "fa": "Farsi"
+  },
+
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "blogs": "Blogs",
+    "MegaMenu": {
+      "html": "HTML | Coming soon...",
+      "css": "CSS | Coming soon...",
+      "javascript": "Javascript | Coming soon...",
+      "git": "Git & Github | Coming soon...",
+      "react": "React | Coming soon...",
+      "nextjs": "Nextjs | Coming soon...",
+      "tailwind": "TailwindCSS | Coming soon...",
+      "bootstrap": "Bootstrap | Coming soon...",
+      "sass": "Sass | Coming soon...",
+      "nodejs": "NodeJs | Coming soon...",
+      "mongodb": "MongoDB | Coming soon...",
+      "php": "PHP | Coming soon...",
+      "laravel": "Laravel | Coming soon...",
+      "sql": "SQL & MySQL | Coming soon...",
+      "Descriptions": {
+        "html": "Website structure",
+        "css": "Website styling",
+        "javascript": "Dynamic content",
+        "git": "Version control",
+        "react": "UI components",
+        "nextjs": "Fullstack framework",
+        "tailwind": "Utility styles",
+        "bootstrap": "UI framework",
+        "sass": "CSS preprocessor",
+        "nodejs": "Backend runtime",
+        "mongodb": "NoSQL database",
+        "php": "Server scripting",
+        "laravel": "PHP framework",
+        "sql": "Relational data"
+      }
+    }
+  },
+
+  "Hero": {
+    "name": "I'm Ali Naghi Hossaini",
+    "title": "Full Stack Developer",
+    "description": "Passionate about creating modern web applications with cutting-edge technologies. Ready to bring your ideas to life with clean code and innovative solutions.",
+    "btn": "View My Work",
+    "Stats": {
+      "projects": {
+        "count": "50+",
+        "label": "Projects"
+      },
+      "technologies": {
+        "count": "14+",
+        "label": "Technologies"
+      },
+      "experience": {
+        "count": "4+",
+        "label": "Years Experience"
+      }
+    }
+  }
+}

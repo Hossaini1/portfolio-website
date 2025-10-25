@@ -1,0 +1,35 @@
+import { NextResponse } from "next/server";
+import { match } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
+
+const locales = ["en", "de", "fa"];
+const defaultLocale = "en";
+
+const getLocale = (request: Request): string => {
+  const headers = Object.fromEntries(request.headers.entries());
+  const languages = new Negotiator({ headers }).languages();
+  return match(languages, locales, defaultLocale);
+};
+
+export function middleware(request: Request) {
+  const { pathname } = new URL(request.url);
+
+  // Prüfe, ob die URL bereits eine Sprache enthält
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
+
+  if (pathnameHasLocale) return NextResponse.next();
+
+  // Falls keine Sprache in der URL, leite zur Browsersprache weiter
+  const locale = getLocale(request);
+  const newUrl = new URL(`/${locale}${pathname}`, request.url);
+
+  return NextResponse.redirect(newUrl);
+}
+
+export const config = {
+  matcher: ["/((?!_next|api).*)"],
+};
+
+// src/middleware.ts
