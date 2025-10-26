@@ -115,4 +115,22 @@ export interface ContactType {
     title: string;
     description: string;
   };
+  openingHours: {
+    title: string;
+    subtitle: string;
+    weekdays: string;
+    saturday: string;
+    sunday: string;
+  };
+}
+
+export interface FooterType {
+  socialMedia: string;
+  copyright: string;
+  links: {
+    imprint: string;
+    privacy: string;
+    contact?: string;
+    terms?: string;
+  };
 }

@@ -3,6 +3,8 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
+
+
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -19,19 +21,6 @@ const poppins = Poppins({
   preload: false,
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
-
-// ✅ STATIC METADATA - Keine dynamischen Berechnungen
-// export const metadata: Metadata = {
-//   title: {
-//     default: "Ali Naghi Hossaini | Full Stack Developer",
-//     template: "%s | Ali Naghi Hossaini"
-//   },
-//   description: "Full Stack Developer specializing in React, Next.js, TypeScript",
-//   metadataBase: new URL('https://yourdomain.com'),
-
-// };
-
-// 
 
 export async function generateMetadata({
   params,

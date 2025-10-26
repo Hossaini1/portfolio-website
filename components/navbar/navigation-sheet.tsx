@@ -1,79 +1,75 @@
+// components/navbar/navigation-sheet.tsx
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { megaMenuItems } from "./config";
+import { ModeToggle } from "../togglemode/toggleMode";
+import SelectLang from "../selectlang/selectLang";
+import AvatarComponent from "../avatar/avatar-component";
+import { NavAndLanguagesType } from "@/types/dictionary-types";
+import { createNavbarConfig, iconMap } from "./config";
 
+export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
+  const { navbarItems, megaMenuItems } = createNavbarConfig(t.Nav);
 
-
-export const NavigationSheet = () => {
   return (
-<Sheet>
-        <SheetTrigger asChild  >
-          <Button variant="outline" size="icon" className="" >
-            <Menu />
-          </Button>
-        </SheetTrigger>
-        <SheetContent className="px-6 py-3 min-w-screen">
-          {/* title and description*/}
-          <SheetHeader>
-            <SheetTitle className="sr-only">Main Navigation</SheetTitle>
-            <SheetDescription className="sr-only">
-              Navigation links for mobile users.
-            </SheetDescription>
-          </SheetHeader>
-          
-         {/* <div className="flex items-center gap-2">
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="icon" className="">
+          <Menu />
+        </Button>
+      </SheetTrigger>
+      <SheetContent className="px-6 py-3 min-w-screen">
+        <SheetHeader>
+          <SheetTitle className="sr-only">Main Navigation</SheetTitle>
+          <SheetDescription className="sr-only">
+            Navigation links for mobile users.
+          </SheetDescription>
+        </SheetHeader>
 
-          <SelectLang dict={{
-          en: "",
-          de: "",
-          fa: ""
-        }} />
-        <ModeToggle />
+        <div className="flex items-center gap-2">
+          <SelectLang t={t.Languages}/>
+          <ModeToggle />
+          <AvatarComponent />
+        </div>
 
-        <AvatarComponent/>
-         </div> */}
-
-          <div className="mt-12 text-base space-y-4 ">
-            <Link href="#" className=" block font-semibold" title="home">
-              Home
+        <div className="mt-12 text-base space-y-4">
+          {navbarItems.map((item) => (
+            <Link 
+              key={item.label} 
+              href={item.href} 
+              className="block font-semibold"
+              title={item.label}
+            >
+              {item.label}
             </Link>
-            <Link href="#" className="block font-semibold" title="about">
-              About
-            </Link>
-            <Link href="#" className="block font-semibold" title="projects">
-              Projects
-            </Link>
+          ))}
 
-            <div>
-
-              <div className="font-bold">Blogs</div>
-
+          <div>
+            <div className="font-bold">{t.Nav?.blogs ?? "Blogs"}</div>
             <ul className="mt-2 space-y-3 ml-1 pl-4 border-l">
-
-              {megaMenuItems.map((item) => (
-
-                <li key={item.title}>
-
-                  <Link href="#" className="flex items-center gap-2">
-
-                    <item.icon className="h-5 w-5 mr-2 text-muted-foreground" />
-
-                    {item.title}
-
-                  </Link>
-
-                </li>
-
-              ))}
-
+              {megaMenuItems.map((item) => {
+                const IconComponent = iconMap[item.icon];
+                return (
+                  <li key={item.key}>
+                    <Link href="#" className="flex items-center gap-2">
+                      <IconComponent className="h-5 w-5 mr-2 text-muted-foreground" />
+                      {item.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
-
           </div>
-          </div>
-        </SheetContent>
-      </Sheet>
-
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };

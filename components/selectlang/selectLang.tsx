@@ -5,6 +5,7 @@ import { Languages, Check } from "lucide-react";
 import { Button } from "../ui/button";
 import {  NavAndLanguagesType } from "@/types/dictionary-types"
 
+
 export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -47,9 +48,9 @@ export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] 
   return (
     <div className="relative">
       <Button
-        size="lg"
+        size="icon"
         onClick={toggleMenu}
-        className=" flex items-center gap-2 px-4 py-2.5 rounded-l-full bg-background border border-border hover:bg-accent hover:text-accent-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background shadow-sm hover:shadow-md dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/20 bg-muted"
+        className=" flex items-center gap-2 px-8 py-5  dark:bg-background border border-border hover:bg-accent hover:text-accent-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background shadow-sm  dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/20 bg-muted"
         aria-label="Change language"
       >
         <Languages className="w-5 h-5 text-foreground" />
@@ -94,3 +95,5 @@ export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] 
     </div>
   );
 }
+
+

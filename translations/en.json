@@ -125,6 +125,22 @@
     "email": {
       "title": "Email",
       "description": "Questions? Just send an email"
+    },
+    "openingHours": {
+      "title": "Opening Hours",
+      "subtitle": "My available hours for meetings",
+      "weekdays": "Monday - Friday: 8:00 - 18:00",
+      "saturday": "Saturday: 10:00 - 14:00",
+      "sunday": "Sunday: Closed"
+    }
+  },
+   "Footer": {
+    "socialMedia": "Social Media", 
+    "copyright": "All rights reserved.",
+    "links": {
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "contact": "Contact"
     }
   }
 }

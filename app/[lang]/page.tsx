@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { getDictionary } from "./dictionaries";
-import ContactSection from "@/components/contact/contact-section";
 
 
 const NavbarComponent = dynamic(() => import("@/components/navbar/navbar-component"), {
@@ -53,7 +52,7 @@ const ProjectsSection = dynamic(() => import("@/components/projectssection/proje
   ssr: true
 });
 
-const Contact02Page = dynamic(() => import("@/components/contact/contact-section"), {
+const ContactSection = dynamic(() => import("@/components/contact/contact-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
@@ -127,7 +126,7 @@ export default async function Home({
       
       <footer>
         <Suspense fallback={<div className="h-20 bg-gray-100 animate-pulse" />}>
-          <FooterSection />
+          <FooterSection t={t.Footer} />
         </Suspense>
       </footer>
     </>
