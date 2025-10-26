@@ -7,7 +7,7 @@ import { NavAndLanguagesType } from "@/types/dictionary-types";
 
 const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
   return (
-    <nav className="border md:border-b rounded-full md:rounded-none md:mt-0 md:shadow-none h-16 md:h-25 bg-background md:border-b fixed right-8 left-8 top-1 z-40 md:right-0 md:left-0 md:top-0 ">
+    <nav className="h-25 bg-background border-b ">
       <div className="h-full flex items-center justify-between max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8">
         <AvatarComponent />
 

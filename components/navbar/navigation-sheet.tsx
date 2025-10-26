@@ -53,7 +53,7 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
           ))}
 
           <div>
-            <div className="font-bold">{t.Nav?.blogs ?? "Blogs"}</div>
+            <div className="font-bold">{t?.Nav?.blogs ?? "Blogs"}</div>
             <ul className="mt-2 space-y-3 ml-1 pl-4 border-l">
               {megaMenuItems.map((item) => {
                 const IconComponent = iconMap[item.icon];

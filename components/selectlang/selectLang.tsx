@@ -50,11 +50,11 @@ export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] 
       <Button
         size="icon"
         onClick={toggleMenu}
-        className=" flex items-center gap-2 px-8 py-5  dark:bg-background border border-border hover:bg-accent hover:text-accent-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background shadow-sm  dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/20 bg-muted"
+        className=" flex items-center gap-2 px-8 py-4.5 bg-muted border hover:bg-accent cursor-pointer dark:bg-background hover:shadow"
         aria-label="Change language"
       >
-        <Languages className="w-5 h-5 text-foreground" />
-        <span className="text-sm font-semibold uppercase tracking-wide text-foreground">
+        <Languages className="w-5 h-5 text-foreground "  />
+        <span className="text-sm font-semibold uppercase tracking-wide text-foreground ">
           {currentLocale}
         </span>
       </Button>
