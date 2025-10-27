@@ -9,10 +9,7 @@ const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
   return (
     <nav className="h-24 bg-background border-b ">
       <div className="h-full flex items-center justify-between max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div className="hidden md:block" >
         <AvatarComponent />
-        </div>
 
         <div className="flex items-center gap-8">
           {/* Desktop Menu */}

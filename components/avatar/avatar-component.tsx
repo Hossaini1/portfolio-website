@@ -17,7 +17,7 @@ export default function AvatarComponent() {
          <Image className="size-12 bg-slate-400 " src={profileImage} alt="profile-image" width={20} height={20}/> 
         </Avatar>
       </TooltipTrigger>
-      <TooltipContent className="font-semibold">Ali Naghi Hossaini Web Developer</TooltipContent>
+      <TooltipContent className="font-semibold">Ali Naghi Hossaini</TooltipContent>
     </Tooltip>
   );
 }

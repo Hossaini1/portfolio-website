@@ -22,7 +22,7 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
   return (
     <Sheet >
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="">
+        <Button variant="outline" size="icon" >
           <Menu />
         </Button>
       </SheetTrigger>
@@ -35,11 +35,11 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
         </SheetHeader>
 
 
-        <div className="flex items-center gap-2 ">
+        {/* <div className="flex items-center gap-2 ">
           <AvatarComponent />
           <SelectLang t={t.Languages}/>
           <ModeToggle />
-        </div>
+        </div> */}
 
         <div className="mt-12 text-base space-y-4">
           {navbarItems.map((item) => (

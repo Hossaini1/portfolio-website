@@ -29,8 +29,8 @@ export const NavMenu = ({ t, ...props }: NavMenuProps) => {
       <NavigationMenuList className="gap-1 space-x-0 text-sm">
         {navbarItems.map((item) => (
           <NavigationMenuItem key={item.label}>
-            <Button variant="ghost" asChild className="text-xl">
-              <Link href={item.href}>{item.label}</Link>
+            <Button variant="ghost" asChild className=" md:text-lg lg:text-xl ">
+              <Link className="py-5.5 " href={item.href}>{item.label}</Link>
             </Button>
            
           </NavigationMenuItem>
@@ -38,12 +38,12 @@ export const NavMenu = ({ t, ...props }: NavMenuProps) => {
          
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-xl">
+          <NavigationMenuTrigger className=" py-5.5 md:text-lg lg:text-xl">
             {t?.blogs ?? "Blogs"}
           </NavigationMenuTrigger>
 
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-1 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[400px] gap-3 p-1 md:w-[650px] md:grid-cols-3 lg:w-[750px]">
               {megaMenuItems.map((menuItem) => {
                 const IconComponent = iconMap[menuItem.icon];
                 return (

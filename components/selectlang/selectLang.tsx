@@ -50,7 +50,7 @@ export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] 
       <Button
         size="icon"
         onClick={toggleMenu}
-        className=" flex items-center gap-2 px-8 py-4.5 bg-muted border hover:bg-accent cursor-pointer dark:bg-background hover:shadow"
+        className=" flex items-center gap-2 px-8 py-4.5 bg-background border hover:bg-accent cursor-pointer dark:bg-background "
         aria-label="Change language"
       >
         <Languages className="w-5 h-5 text-foreground "  />
