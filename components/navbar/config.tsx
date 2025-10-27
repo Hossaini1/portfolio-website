@@ -2,7 +2,6 @@
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 import dynamic from "next/dynamic";
 
-// Icons werden dynamisch importiert um Bundle Size zu reduzieren
 export const createNavbarConfig = (t: NavAndLanguagesType["Nav"]) => {
   const navbarItems = [
     { label: t?.home ?? "Home", href: "/" },
@@ -101,7 +100,6 @@ export const createNavbarConfig = (t: NavAndLanguagesType["Nav"]) => {
   return { navbarItems, megaMenuItems };
 };
 
-// Icon Mapping für dynamischen Import
 export const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ChevronsLeftRightEllipsis: dynamic(() => import("lucide-react").then((mod) => mod.ChevronsLeftRightEllipsis)),
   Palette: dynamic(() => import("lucide-react").then((mod) => mod.Palette)),

@@ -9,4 +9,3 @@ const dictionaries = {
 export const getDictionary = async (locale: 'en' | 'de' | 'fa') =>
   dictionaries[locale]();
 
-// [lang]/dictionaries.ts 

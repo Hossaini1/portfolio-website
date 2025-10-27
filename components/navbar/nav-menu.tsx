@@ -15,6 +15,7 @@ import Link from "next/link";
 import React, { ComponentProps } from "react";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 import { createNavbarConfig, iconMap } from "./config";
+import AvatarComponent from "../avatar/avatar-component";
 
 interface NavMenuProps extends ComponentProps<typeof NavigationMenu> {
   t: NavAndLanguagesType["Nav"];
@@ -31,8 +32,10 @@ export const NavMenu = ({ t, ...props }: NavMenuProps) => {
             <Button variant="ghost" asChild className="text-xl">
               <Link href={item.href}>{item.label}</Link>
             </Button>
+           
           </NavigationMenuItem>
         ))}
+         
 
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-xl">

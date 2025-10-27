@@ -20,7 +20,7 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
   const { navbarItems, megaMenuItems } = createNavbarConfig(t.Nav);
 
   return (
-    <Sheet>
+    <Sheet >
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="">
           <Menu />
@@ -34,10 +34,11 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
           </SheetDescription>
         </SheetHeader>
 
-        <div className="flex items-center gap-2">
+
+        <div className="flex items-center gap-2 ">
+          <AvatarComponent />
           <SelectLang t={t.Languages}/>
           <ModeToggle />
-          <AvatarComponent />
         </div>
 
         <div className="mt-12 text-base space-y-4">
@@ -51,7 +52,7 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
               {item.label}
             </Link>
           ))}
-
+<hr />
           <div>
             <div className="font-bold">{t?.Nav?.blogs ?? "Blogs"}</div>
             <ul className="mt-2 space-y-3 ml-1 pl-4 border-l">

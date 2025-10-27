@@ -14,14 +14,12 @@ const getLocale = (request: Request): string => {
 export function middleware(request: Request) {
   const { pathname } = new URL(request.url);
 
-  // Prüfe, ob die URL bereits eine Sprache enthält
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) return NextResponse.next();
 
-  // Falls keine Sprache in der URL, leite zur Browsersprache weiter
   const locale = getLocale(request);
   const newUrl = new URL(`/${locale}${pathname}`, request.url);
 
@@ -32,4 +30,3 @@ export const config = {
   matcher: ["/((?!_next|api).*)"],
 };
 
-// src/middleware.ts

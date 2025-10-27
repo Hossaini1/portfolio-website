@@ -78,7 +78,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning >
       <body
-        className={`antialiased ${montserrat.variable} ${poppins.variable} antialiased`} 
+        className={`antialiased ${montserrat.variable} ${poppins.variable} font-sans`} 
         dir={lang === "fa" ? "rtl" : "ltr"} 
       >
         <ThemeProvider
