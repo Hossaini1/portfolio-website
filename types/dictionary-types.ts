@@ -88,6 +88,8 @@ export interface ProjectsSectionType {
   subtitle: string;
 
   Projects: {
+    image: string;
+    demoUrl: string | undefined;
     id: number;
     title: string;
     description: string;

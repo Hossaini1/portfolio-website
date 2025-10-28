@@ -15,21 +15,21 @@ import { AboutType } from "@/types/dictionary-types";
 export default function AboutSection({ t }: { t: AboutType }) {
   return (
     <section>
-      <div className=" dark:bg-background py-24 md:py-32 mt-20 ">
+      <div className=" dark:bg-background pt-25 md:pt-31 lg:pt-37 pb-16  ">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid items-start sm:grid-cols-2 gap-50">
+          <div className="grid items-start sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-40 lg:gap-50 ">
             
-            <div className="mx-auto  max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
-              <h2 className="text-balance mt-6 text-3xl font-semibold md:text-4xl">
+            <div className="col-span-1 md:col-span-2 mx-auto max-w-lg space-y-6 text-center sm:mt-0 sm:text-left order-2 sm:order-1">
+              <h2 className="text-balance text-4xl font-semibold ">
                 {t?.title ?? "About Me"}
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify text-lg">
                 {t?.description??
                   "Hi, I'm a Full Stack Web Developer\nPassionate about modern web technologies in developing user-friendly frontend applications and backend solutions. Always striving to write clean and efficient code and learn new technologies.\n\nWith an eye for detail and the ability to combine both technical and design aspects, I create digital experiences that not only function but also inspire. Every project is an opportunity for me to grow and innovate."}
               </p>
             </div>
 
-            <div className="dark:bg-muted/50 relative mx-auto w-fit">
+            <div className="col-span-1 dark:bg-muted/50 relative mx-auto w-fit order-1 sm:order-2">
               <div
                 aria-hidden
                 className="bg-radial to-background dark:to-background absolute inset-0 z-10 from-transparent to-75%"
@@ -44,7 +44,6 @@ export default function AboutSection({ t }: { t: AboutType }) {
               </div>
               <div className="mx-auto my-2 flex w-fit justify-center gap-2">
                 <IntegrationCard>
-                  
                   <Gemini />
                 </IntegrationCard>
                 <IntegrationCard

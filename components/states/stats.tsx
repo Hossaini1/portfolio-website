@@ -1,30 +1,38 @@
 import { HeroType } from "@/types/dictionary-types";
 
-export default function StatsSection({t}:{t:HeroType}) {
-    return (
-        <section className="py-12 md:py-20">
-            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-                {/* <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
-                    <h2 className="text-4xl font-medium lg:text-5xl">Tailark in numbers</h2>
-                    <p>Gemini is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</p>
-                </div> */}
+export default function StatsSection({ t }: { t: HeroType }) {
+  const stats = [
+    {
+      key: "projects",
+      count: t?.Stats?.projects?.count ?? "50+",
+      label: t?.Stats?.projects?.label ?? "Projects"
+    },
+    {
+      key: "technologies", 
+      count: t?.Stats?.technologies?.count ?? "14+",
+      label: t?.Stats?.technologies?.label ?? "Technologies"
+    },
+    {
+      key: "experience",
+      count: t?.Stats?.experience?.count ?? "+4", 
+      label: t?.Stats?.experience?.label ?? "Years Experience"
+    }
+  ];
 
-
-                <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
-                    <div className="space-y-4">
-                        <div className="text-5xl font-bold">{t.Stats.projects.count ?? "50+"}</div>
-                        <p>{t.Stats.projects.label ?? "Projects"}</p>
-                    </div>
-                    <div className="space-y-4">
-                        <div className="text-5xl font-bold">{t.Stats.technologies.count ?? "14+"}</div>
-                        <p>{t.Stats.technologies.label ?? "Technologies"}</p>
-                    </div>
-                    <div className="space-y-4">
-                        <div className="text-5xl font-bold">{t.Stats.experience.count??"+4"}</div>
-                        <p>{t.Stats.experience.label??"Years Experience"}</p>
-                    </div>
-                </div>
+  return (
+    <section className="pt-12 md:py-20">
+      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+        <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0 mt-10">
+          {stats.map((stat) => (
+            <div key={stat.key} className="space-y-4">
+              <div className="text-4xl md:text-5xl font-bold">
+                {stat.count}
+              </div>
+              <p className="pb-2">{stat.label}</p>
             </div>
-        </section>
-    )
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

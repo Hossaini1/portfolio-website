@@ -82,29 +82,18 @@
   "ProjectsSection": {
     "title": "Few my latest works",
     "subtitle": "Discover a selection of my recent projects",
-    "Projects": [
-      {
-        "id": 1,
-        "title": "Identify Opportunities",
-        "description": "Find untapped areas to explore effortlessly",
-        "category": "Web Development",
-        "technologies": ["React", "TypeScript", "Tailwind CSS"]
-      },
-      {
-        "id": 2,
-        "title": "Build Authority",
-        "description": "Craft content that resonates and inspires trust",
-        "category": "Content Strategy",
-        "technologies": ["Next.js", "CMS", "SEO"]
-      },
-      {
-        "id": 3,
-        "title": "Instant Insights",
-        "description": "Get actionable insights instantly at a glance",
-        "category": "Data Analytics",
-        "technologies": ["Data Visualization", "API", "Dashboard"]
-      }
-    ]
+    
+   "Projects": [
+    {
+      "description": "Modern and responsive presentation website"
+    },
+    {
+      "description": "Translation website with real-time feature"
+    },
+    {
+      "description": "Modern landing page for VPN service"
+    }
+  ]
   },
 
   "Contact": {

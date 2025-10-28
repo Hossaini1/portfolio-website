@@ -9,14 +9,15 @@ import { ClockIcon, MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 
 const ContactSection = ({ t }: { t: ContactType }) => (
-  <div className="flex items-center justify-center py-16">
+  <div className="flex items-center justify-center py-32 md:py-16">
     <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
-      <h2 className="uppercase font-semibold text-3xl">
+      <h2 className="font-semibold text-3xl text-center md:text-start">
         {t?.title ?? "Contact Me"}
       </h2>
-      <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
+      <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10 text-center md:text-start">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
-          <div>
+          {/* Email - zentriert auf Mobile, normal ab md */}
+          <div className="flex flex-col items-center sm:items-start">
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MailIcon />
             </div>
@@ -35,8 +36,9 @@ const ContactSection = ({ t }: { t: ContactType }) => (
             </Link>
           </div>
 
-          <div>
-            <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full ">
+          {/* Office - zentriert auf Mobile, normal ab md */}
+          <div className="flex flex-col items-center sm:items-start">
+            <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MapPinIcon />
             </div>
             <h3 className="mt-6 font-semibold text-xl">
@@ -54,7 +56,8 @@ const ContactSection = ({ t }: { t: ContactType }) => (
             </Link>
           </div>
 
-          <div className="sm:col-span-2">
+          {/* Opening Hours - zentriert auf Mobile, normal ab md */}
+          <div className="sm:col-span-2 flex flex-col items-center sm:items-start">
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <ClockIcon />
             </div>
@@ -64,7 +67,7 @@ const ContactSection = ({ t }: { t: ContactType }) => (
             <p className="my-2.5 text-muted-foreground">
               {t?.openingHours?.subtitle ?? "My available hours for meetings"}
             </p>
-            <div className="font-medium text-foreground space-y-2">
+            <div className="font-medium text-foreground space-y-2 text-center sm:text-left">
               <div>
                 {t?.openingHours?.weekdays ?? "Monday - Friday: 8:00 - 18:00"}
               </div>

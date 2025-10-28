@@ -82,27 +82,18 @@
     "title": "Meine neuesten Projekte",
     "subtitle": "Entdecken Sie eine Auswahl meiner aktuellen Arbeiten",
     "Projects": [
-      {
-        "id": 1,
-        "title": "Opportunitäten identifizieren",
-        "description": "Finden Sie ungenutzte Bereiche mühelos zu erkunden",
-        "category": "Web Development",
-        "technologies": ["React", "TypeScript", "Tailwind CSS"]
-      },
-      {
-        "id": 2,
-        "title": "Autorität aufbauen",
-        "description": "Erstellen Sie Inhalte, die Resonanz finden und Vertrauen inspirieren",
-        "category": "Content Strategy",
-        "technologies": ["Next.js", "CMS", "SEO"]
-      },
-      {
-        "id": 3,
-        "title": "Sofortige Einblicke",
-        "description": "Erhalten Sie sofort umsetzbare Erkenntnisse auf einen Blick",
-        "category": "Data Analytics",
-        "technologies": ["Data Visualization", "API", "Dashboard"]
-      }
+     {
+    "description": "Moderne und responsive Präsentationswebsite"
+
+  },
+  {
+    "description": "Übersetzungs-Webseite mit Echtzeitfunktion"
+   
+  },
+  {
+    "description": "Moderne Landingpage für VPN-Dienst"
+
+  }
     ]
   },
 
