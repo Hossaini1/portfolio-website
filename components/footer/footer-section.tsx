@@ -78,7 +78,7 @@ const FooterSection = ({t}:{t:FooterType}) => {
           
           {/* Copyright - zentriert auf Mobile, links ab md */}
           <div className="py-8 text-center md:text-start">
-            <span className="text-muted-foreground text-base px-6">
+            <span className="text-muted-foreground text-base px-0 md:px-6 lg:px-0">
               &copy; {new Date().getFullYear()}{" "}
               {t?.copyright ?? " All rights reserved."}
             </span>

@@ -1,26 +1,25 @@
 import type { Metadata } from "next";
-// import { Montserrat, Poppins } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
+import "../globals.css";
 import { ThemeProvider } from "next-themes";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: "swap", 
+  preload: true,
+  adjustFontFallback: true, 
+  fallback: ["-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+});
 
-
-// const montserrat = Montserrat({
-//   variable: "--font-montserrat",
-//   subsets: ["latin"],
-//   display: "swap",
-//   preload: true,
-//   adjustFontFallback: true,
-//   weight: ["300", "400", "500", "600", "700", "800", "900"],
-// });
-
-// const poppins = Poppins({
-//   variable: "--font-poppins",
-//   subsets: ["latin"],
-//   display: "swap",
-//   preload: false,
-//   weight: ["300", "400", "500", "600", "700", "800", "900"],
-// });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono", 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["Monaco", "Courier New", "monospace"], 
+});
 
 export async function generateMetadata({
   params,
@@ -76,10 +75,10 @@ export default async function RootLayout({
   const { lang } = await params;
 
   return (
-    <html lang={lang} suppressHydrationWarning >
+    <html lang={lang} suppressHydrationWarning>
       <body
-        className="font-sans antialiased "
-        dir={lang === "fa" ? "rtl" : "ltr"} 
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        dir={lang === "fa" ? "rtl" : "ltr"}
       >
         <ThemeProvider
           attribute="class"

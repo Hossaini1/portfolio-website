@@ -94,14 +94,14 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
           src={project.image}
           alt={`Screenshot of ${project.title} project`}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover group-hover:scale-105 transition-transform duration-500 border-b"
           placeholder="blur"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           loading="lazy"
         />
       </div>
 
-      <div className="p-6 flex flex-col flex-1 gap-6">
+      <div className="p-6 flex flex-col flex-1 gap-5">
         <div className="flex-1">
           <h3 className="text-lg md:text-xl font-bold tracking-tight mb-2 text-foreground group-hover:text-foreground">
             {project.title}
