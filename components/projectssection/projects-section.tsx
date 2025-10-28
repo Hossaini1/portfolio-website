@@ -5,9 +5,9 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { useMemo, memo } from "react";
 
-import portfolioImage from '@/public/uploads/portfolio.png';
-import vpnImage from '@/public//uploads/vpn-site.png';
-import translateImage from '@/public//uploads/vue-translate.png';
+import portfolioImage from "@/public/uploads/portfolio.png";
+import vpnImage from "@/public//uploads/vpn-site.png";
+import translateImage from "@/public//uploads/vue-translate.png";
 
 interface Project {
   title: string;
@@ -25,7 +25,7 @@ interface ProjectsSectionProps {
 const PROJECT_IMAGES = {
   portfolio: portfolioImage,
   vpn: vpnImage,
-  translate: translateImage
+  translate: translateImage,
 } as const;
 
 const STATIC_PROJECTS: ReadonlyArray<Project> = [
@@ -35,15 +35,15 @@ const STATIC_PROJECTS: ReadonlyArray<Project> = [
     category: "Frontend",
     technologies: ["HTML", "CSS", "Javascript"],
     image: PROJECT_IMAGES.portfolio,
-    demoUrl: "https://your-portfolio.com"
+    demoUrl: "https://your-portfolio.com",
   },
   {
-    title: "Vuejs App Translate", 
+    title: "Vuejs App Translate",
     description: "Translation website with real-time feature",
     category: "Web Development",
     technologies: ["Vue.js", "TypeScript", "Multilanguages Markdown"],
     image: PROJECT_IMAGES.translate,
-    demoUrl: "https://translate-app.com"
+    demoUrl: "https://translate-app.com",
   },
   {
     title: "VPN Site",
@@ -51,33 +51,31 @@ const STATIC_PROJECTS: ReadonlyArray<Project> = [
     category: "Frontend",
     technologies: ["React.js", "Sass", "Vite"],
     image: PROJECT_IMAGES.vpn,
-    demoUrl: "https://vpn-landing.com"
-  }
+    demoUrl: "https://vpn-landing.com",
+  },
 ] as const;
 
 const TECH_MAP: Readonly<Record<string, string>> = {
-  'html': 'html',
-  'css': 'css',
-  'javascript': 'javascript',
-  'vue.js': 'vue',
-  'typescript': 'typescript',
-  'react.js': 'react',
-  'react': 'react',
-  'sass': 'css',
-  'vite': 'default',
-  'multilanguages markdown': 'multilanguage'
+  html: "html",
+  css: "css",
+  javascript: "javascript",
+  "vue.js": "vue",
+  typescript: "typescript",
+  "react.js": "react",
+  react: "react",
+  sass: "css",
+  vite: "default",
+  "multilanguages markdown": "multilanguage",
 } as const;
-
 
 const ProjectCard = memo(({ project }: { project: Project }) => {
   const getTechVariant = (tech: string): string => {
     const normalizedTech = tech.toLowerCase();
-    return TECH_MAP[normalizedTech] || 'secondary';
+    return TECH_MAP[normalizedTech] || "secondary";
   };
 
   return (
     <article className="group flex flex-col w-full border border-border rounded-xl overflow-hidden  transition-all duration-300 bg-background hover:translate-y-[-4px]">
-
       <div className="relative w-full aspect-[4/3] bg-muted overflow-hidden">
         <Image
           src={project.image}
@@ -89,7 +87,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
           loading="lazy"
         />
       </div>
-      
+
       {/* Content Section */}
       <div className="p-6 flex flex-col flex-1 gap-4">
         <div className="flex-1">
@@ -100,11 +98,11 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
             {project.description}
           </p>
         </div>
-        
+
         {/* Technologies Badges */}
         <div className="flex flex-wrap gap-3">
           {project.technologies.map((tech) => (
-            <Badge 
+            <Badge
               key={`${project.title}-${tech}`}
               variant={getTechVariant(tech) as any}
               className="text-xs font-medium"
@@ -133,17 +131,16 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
   );
 });
 
-ProjectCard.displayName = 'ProjectCard';
+ProjectCard.displayName = "ProjectCard";
 
 const ProjectsSection = ({ t }: ProjectsSectionProps) => {
-
   const projects = useMemo((): ReadonlyArray<Project> => {
     return STATIC_PROJECTS.map((staticProject, index) => {
       const dynamicDescription = t?.Projects?.[index]?.description;
-      
+
       return {
         ...staticProject,
-        description: dynamicDescription || staticProject.description
+        description: dynamicDescription || staticProject.description,
       };
     });
   }, [t?.Projects]);
@@ -152,21 +149,18 @@ const ProjectsSection = ({ t }: ProjectsSectionProps) => {
     <section className="min-h-screen flex items-center justify-center py-12 px-6">
       <div className="w-full max-w-7xl">
         {/* Header Section */}
-        <header className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+        <header className="text-center md:text-start mb-12 md:mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold ">
             {t?.title ?? "My Latest Projects"}
           </h1>
-          <p className="text-xl text-muted-foreground mt-4 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mt-4 max-w-2xl  md:mx-0">
             {t?.subtitle ?? "Discover a selection of my recent projects"}
           </p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project) => (
-            <ProjectCard 
-              key={project.title} 
-              project={project} 
-            />
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>
