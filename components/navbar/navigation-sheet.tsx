@@ -10,9 +10,6 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { ModeToggle } from "../togglemode/toggleMode";
-import SelectLang from "../selectlang/selectLang";
-import AvatarComponent from "../avatar/avatar-component";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 import { createNavbarConfig, iconMap } from "./config";
 

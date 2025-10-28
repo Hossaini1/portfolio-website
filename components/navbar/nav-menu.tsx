@@ -15,7 +15,7 @@ import Link from "next/link";
 import React, { ComponentProps } from "react";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 import { createNavbarConfig, iconMap } from "./config";
-import AvatarComponent from "../avatar/avatar-component";
+
 
 interface NavMenuProps extends ComponentProps<typeof NavigationMenu> {
   t: NavAndLanguagesType["Nav"];

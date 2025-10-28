@@ -9,7 +9,7 @@ import { ClockIcon, MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 
 const ContactSection = ({ t }: { t: ContactType }) => (
-  <div className="flex items-center justify-center py-32 md:py-16">
+  <div className="flex items-center justify-center py-32 md:py-16 ">
     <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
       <h2 className="font-semibold text-3xl text-center md:text-start">
         {t?.title ?? "Contact Me"}
@@ -80,7 +80,7 @@ const ContactSection = ({ t }: { t: ContactType }) => (
         </div>
 
         {/* Form */}
-        <Card className="bg-accent shadow-none py-0">
+        <Card className="bg-accent shadow-none py-0 ">
           <CardContent className="p-6 md:p-8">
             <form>
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
