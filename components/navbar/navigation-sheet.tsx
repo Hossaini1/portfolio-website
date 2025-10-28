@@ -31,19 +31,12 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
           </SheetDescription>
         </SheetHeader>
 
-
-        {/* <div className="flex items-center gap-2 ">
-          <AvatarComponent />
-          <SelectLang t={t.Languages}/>
-          <ModeToggle />
-        </div> */}
-
-        <div className="mt-12 text-base space-y-4">
+        <div className="pt-4 text-base space-y-4">
           {navbarItems.map((item) => (
             <Link 
               key={item.label} 
               href={item.href} 
-              className="block font-semibold"
+              className="block font-semibold text-md"
               title={item.label}
             >
               {item.label}
@@ -51,8 +44,8 @@ export const NavigationSheet = ({t}:{t: NavAndLanguagesType}) => {
           ))}
 <hr />
           <div>
-            <div className="font-bold">{t?.Nav?.blogs ?? "Blogs"}</div>
-            <ul className="mt-2 space-y-3 ml-1 pl-4 border-l">
+            <div className="font-bold text-md">{t?.Nav?.blogs ?? "Blogs"}</div>
+            <ul className="pt-2 space-y-3 ml-1 pl-4 border-l text-sm">
               {megaMenuItems.map((item) => {
                 const IconComponent = iconMap[item.icon];
                 return (

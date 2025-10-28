@@ -20,9 +20,9 @@ export default function StatsSection({ t }: { t: HeroType }) {
   ];
 
   return (
-    <section className="pt-12 md:py-20">
+    <section className="mt-17 md:mt-27 lg:mt-32">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0 mt-10">
+        <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
           {stats.map((stat) => (
             <div key={stat.key} className="space-y-4">
               <div className="text-4xl md:text-5xl font-bold">

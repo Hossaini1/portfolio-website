@@ -54,7 +54,7 @@ export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] 
         aria-label="Change language"
       >
         <Languages className="w-5 h-5 text-foreground "  />
-        <span className="text-sm font-semibold uppercase tracking-wide text-foreground ">
+        <span className="text-xs md:text-base font-semibold uppercase tracking-wide text-foreground ">
           {currentLocale}
         </span>
       </Button>

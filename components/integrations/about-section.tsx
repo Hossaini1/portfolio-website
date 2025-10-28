@@ -15,24 +15,24 @@ import { AboutType } from "@/types/dictionary-types";
 export default function AboutSection({ t }: { t: AboutType }) {
   return (
     <section>
-      <div className=" dark:bg-background pt-25 md:pt-31 lg:pt-37 pb-16  ">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid items-start sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-40 lg:gap-50 ">
+      <div className="  dark:bg-background mt-17 md:mt-27 lg:mt-40 ">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-start sm:grid-cols-2 gap-16 sm:gap-10 md:gap-30 lg:gap-34 items-center">
             
-            <div className="col-span-1 md:col-span-2 mx-auto max-w-lg space-y-6 text-center sm:mt-0 sm:text-left order-2 sm:order-1">
-              <h2 className="text-balance text-4xl font-semibold ">
+            <div className="dark:bg-background relative mx-auto w-fit order-2 sm:order-1">
+              <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold pb-4 text-center sm:text-start">
                 {t?.title ?? "About Me"}
               </h2>
-              <p className="text-muted-foreground text-justify text-lg">
+              <p className="text-accent-foreground text-justify text-base md:text-lg lg:text-xl">
                 {t?.description??
                   "Hi, I'm a Full Stack Web Developer\nPassionate about modern web technologies in developing user-friendly frontend applications and backend solutions. Always striving to write clean and efficient code and learn new technologies.\n\nWith an eye for detail and the ability to combine both technical and design aspects, I create digital experiences that not only function but also inspire. Every project is an opportunity for me to grow and innovate."}
               </p>
             </div>
 
-            <div className="col-span-1 dark:bg-muted/50 relative mx-auto w-fit order-1 sm:order-2">
+            <div className="col-span-1 dark:bg-muted/50 relative mx-auto w-fit order-1 sm:order-2 self-center justify-self-center ">
               <div
                 aria-hidden
-                className="bg-radial to-background dark:to-background absolute inset-0 z-10 from-transparent to-75%"
+                className="bg-radial to-background dark:to-background absolute inset-0 z-10 from-transparent to-75% "
               />
               <div className="mx-auto mb-2 flex w-fit justify-center gap-2">
                 <IntegrationCard>

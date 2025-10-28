@@ -9,27 +9,27 @@ import { ClockIcon, MailIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 
 const ContactSection = ({ t }: { t: ContactType }) => (
-  <div className="flex items-center justify-center py-32 md:py-16 ">
+  <div className="flex items-center justify-center mt-18 md:mt-27 lg:mt-37 ">
     <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
-      <h2 className="font-semibold text-3xl text-center md:text-start">
+      <h3 className="font-semibold text-4xl md:text-5xl text-center md:text-start">
         {t?.title ?? "Contact Me"}
-      </h2>
-      <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10 text-center md:text-start">
+      </h3>
+      <div className="pt-14 md:pt-17 grid lg:grid-cols-2 gap-16 md:gap-10 text-center md:text-start">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
           {/* Email - zentriert auf Mobile, normal ab md */}
           <div className="flex flex-col items-center sm:items-start">
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MailIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">
+            <h4 className="mt-6 font-semibold text-lg md:text-xl">
               {t?.email?.title ?? "Email"}
-            </h3>
-            <p className="my-2.5 text-muted-foreground">
+            </h4>
+            <p className="my-2.5 text-muted-foreground text-sm">
               {t?.email?.description ??
                 "For questions, feel free to send me an email"}
             </p>
             <Link
-              className="font-medium text-primary"
+              className="font-medium text-primary text-base md:text-lg"
               href="mailto:a@gmail.com"
             >
               a@gmail.com
@@ -41,14 +41,14 @@ const ContactSection = ({ t }: { t: ContactType }) => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <MapPinIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">
+            <h4 className="mt-6 font-semibold text-lg md:text-xl">
               {t?.office?.title ?? "Office"}
-            </h3>
-            <p className="my-2.5 text-muted-foreground">
+            </h4>
+            <p className="my-2.5 text-muted-foreground text-sm">
               {t?.office?.subtitle ?? "Feel free to drop by my office."}
             </p>
             <Link
-              className="font-medium text-blue-500 hover:text-blue-400 visited:text-purple-500 visited:hover:text-purple-400 transition-colors"
+              className="font-medium text-blue-500 hover:text-blue-400 visited:text-purple-500 visited:hover:text-purple-400 transition-colors text-base md:text-lg"
               href="https://map.google.com"
               target="_blank"
             >
@@ -61,13 +61,13 @@ const ContactSection = ({ t }: { t: ContactType }) => (
             <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
               <ClockIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">
+            <h4 className="mt-6 font-semibold text-lg md:text-xl">
               {t?.openingHours?.title ?? "Opening Hours"}
-            </h3>
+            </h4>
             <p className="my-2.5 text-muted-foreground">
-              {t?.openingHours?.subtitle ?? "My available hours for meetings"}
+              {t?.openingHours?.subtitle ?? "My available hours for meetings text-sm"}
             </p>
-            <div className="font-medium text-foreground space-y-2 text-center sm:text-left">
+            <div className="font-medium text-foreground space-y-2 text-center sm:text-start text-base">
               <div>
                 {t?.openingHours?.weekdays ?? "Monday - Friday: 8:00 - 18:00"}
               </div>

@@ -17,15 +17,15 @@ export default function CloudLogo({
 }: CloudLogoProps) {
   
   return (
-    <section className="bg-background overflow-hidden pt-14 ">
-      <div className="group relative m-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center md:flex-row">
+    <section className="bg-background overflow-hidden ">
+      <div className="group relative m-auto max-w-6xl px-6 mt-17 md:mt-26 lg:mt-30">
+        <div className="flex flex-col items-center md:flex-row ">
           <div className="md:max-w-44 md:border-r md:pr-6">
-            <p className="text-center text-md mb-2">
+            <p className="text-center text-md mb-4">
               <strong>{title}</strong> <span className="block">{subtitle}</span>
             </p>
           </div>
-          <div className="relative py-6 md:w-[calc(100%-11rem)]">
+          <div className="relative pt-0 md:w-[calc(100%-11rem)]">
             <InfiniteSlider 
               speedOnHover={20} 
               speed={40} 

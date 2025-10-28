@@ -88,7 +88,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
   };
 
   return (
-    <article className="group flex flex-col w-full border border-border rounded-xl overflow-hidden transition-all duration-300 bg-background hover:translate-y-[-4px] hover:shadow-lg">
+    <article className="group flex flex-col w-full border border-border rounded-xl overflow-hidden transition-all duration-300 bg-background hover:translate-y-[-4px]">
       <div className="relative w-full aspect-[4/3] bg-muted overflow-hidden">
         <Image
           src={project.image}
@@ -101,9 +101,9 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
         />
       </div>
 
-      <div className="p-6 flex flex-col flex-1 gap-4">
+      <div className="p-6 flex flex-col flex-1 gap-6">
         <div className="flex-1">
-          <h3 className="text-xl font-bold tracking-tight mb-4 text-foreground group-hover:text-foreground">
+          <h3 className="text-lg md:text-xl font-bold tracking-tight mb-2 text-foreground group-hover:text-foreground">
             {project.title}
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-muted-foreground">
@@ -129,7 +129,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-muted dark:bg-background inline-flex items-center justify-center w-full py-2.5 px-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors border border-primary/20 rounded-lg hover:bg-primary/5 hover:border-primary/30"
+              className="bg-muted dark:bg-background inline-flex items-center justify-center w-full py-2.5 px-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors border border-primary/20 rounded-lg hover:bg-primary/5 hover:border-primary/30 mt-5"
             >
               <span>Live Demo/Code</span>
               <ExternalLink className="w-4 h-4 ml-2" />
@@ -156,18 +156,18 @@ const ProjectsSection = ({ t }: ProjectsSectionProps) => {
   }, [t?.Projects]);
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 px-6">
+    <section className="flex items-center justify-center mt-17 md:mt-27 lg:mt-41 px-4">
       <div className="w-full max-w-7xl">
-        <header className="text-center md:text-start mb-12 md:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold">
+        <header className="text-center md:text-start mb-12 md:mb-14">
+          <h3 className="text-4xl md:text-5xl font-semibold">
             {t?.title ?? "My Latest Projects"}
-          </h1>
-          <p className="text-xl text-muted-foreground mt-4 max-w-2xl md:mx-0">
+          </h3>
+          <p className="text-base md:text-xl text-muted-foreground mt-4 max-w-2xl md:mx-0">
             {t?.subtitle ?? "Discover a selection of my recent projects"}
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

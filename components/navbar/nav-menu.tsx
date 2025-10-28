@@ -29,7 +29,7 @@ export const NavMenu = ({ t, ...props }: NavMenuProps) => {
       <NavigationMenuList className="gap-1 space-x-0 text-sm">
         {navbarItems.map((item) => (
           <NavigationMenuItem key={item.label}>
-            <Button variant="ghost" asChild className=" md:text-lg lg:text-xl ">
+            <Button variant="ghost" asChild className="  md:text-lg lg:text-xl ">
               <Link className="py-5.5 " href={item.href}>{item.label}</Link>
             </Button>
            
