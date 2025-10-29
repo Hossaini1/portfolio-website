@@ -1,3 +1,4 @@
+import Link from "next/link"
 import "./globals.css"
 export default function NotFound() {
   return (
@@ -5,9 +6,9 @@ export default function NotFound() {
       <div className="text-center">
         <h1 className="text-5xl font-bold text-gray-900 mb-4">404 Opss</h1>
         <p className="text-5xl text-gray-600 mb-8 uppercase">Page not found</p>
-        <a href="/" className="text-blue-600 hover:text-blue-500 text-lg">
+        <Link href="/" className="text-blue-600 hover:text-blue-500 text-lg">
           Back to homepage
-        </a>
+        </Link>
       </div>
     </div>
   )
