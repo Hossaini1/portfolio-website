@@ -1,19 +1,19 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { getDictionary } from "../../lib/i18n/dictionaries";
-import FAQ from "@/components/sections/faq/faq";
+import FaqComponent from "@/components/sections/faq/faq";
 
-// Lazy load heavy components with optimized loading states
+// Lazy load heavy components
 const NavbarComponent = dynamic(() => import("@/components/layouts/navbar/navbar-component"), {
-  loading: () => <div className="h-16 bg-background animate-pulse" />,
+  loading: () => <div className="h-16 bg-background animate-pulse" aria-label="Loading navigation" />,
 });
 
 const HeroSection = dynamic(() => import("@/components/sections/hero/hero-section"), {
   loading: () => (
     <section className="min-h-screen flex items-center justify-center">
       <div className="text-center">
-        <div className="h-8 bg-gray-200 rounded w-64 mb-4 mx-auto animate-pulse"></div>
-        <div className="h-4 bg-gray-200 rounded w-96 mx-auto animate-pulse"></div>
+        <div className="h-8 bg-gray-200 rounded w-64 mb-4 mx-auto animate-pulse" aria-hidden="true"></div>
+        <div className="h-4 bg-gray-200 rounded w-96 mx-auto animate-pulse" aria-hidden="true"></div>
       </div>
     </section>
   ),
@@ -21,11 +21,11 @@ const HeroSection = dynamic(() => import("@/components/sections/hero/hero-sectio
 
 const AboutSection = dynamic(() => import("@/components/sections/about/about-section"), {
   loading: () => (
-    <section className="py-20">
-      <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
+    <section className="py-20" aria-label="Loading about section">
+      <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse" aria-hidden="true"></div>
       <div className="flex justify-center gap-4">
         {[1, 2, 3, 4, 5].map(i => (
-          <div key={i} className="h-12 w-12 bg-gray-200 rounded animate-pulse"></div>
+          <div key={i} className="h-12 w-12 bg-gray-200 rounded animate-pulse" aria-hidden="true"></div>
         ))}
       </div>
     </section>
@@ -34,14 +34,14 @@ const AboutSection = dynamic(() => import("@/components/sections/about/about-sec
 
 const ProjectsSection = dynamic(() => import("@/components/sections/projectssection/projects-section"), {
   loading: () => (
-    <section className="py-20">
-      <div className="h-8 bg-gray-200 rounded w-48 mb-12 mx-auto animate-pulse"></div>
+    <section className="py-20" aria-label="Loading projects section">
+      <div className="h-8 bg-gray-200 rounded w-48 mb-12 mx-auto animate-pulse" aria-hidden="true"></div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[1, 2, 3].map(i => (
           <div key={i} className="text-center">
-            <div className="h-12 w-12 bg-gray-200 rounded mx-auto mb-4 animate-pulse"></div>
-            <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-2 animate-pulse"></div>
-            <div className="h-3 bg-gray-200 rounded w-48 mx-auto animate-pulse"></div>
+            <div className="h-12 w-12 bg-gray-200 rounded mx-auto mb-4 animate-pulse" aria-hidden="true"></div>
+            <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-2 animate-pulse" aria-hidden="true"></div>
+            <div className="h-3 bg-gray-200 rounded w-48 mx-auto animate-pulse" aria-hidden="true"></div>
           </div>
         ))}
       </div>
@@ -51,20 +51,20 @@ const ProjectsSection = dynamic(() => import("@/components/sections/projectssect
 
 const ContactSection = dynamic(() => import("@/components/sections/contact/contact-section"), {
   loading: () => (
-    <section className="py-20">
-      <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
+    <section className="py-20" aria-label="Loading contact section">
+      <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse" aria-hidden="true"></div>
       <div className="max-w-md mx-auto">
-        <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse"></div>
-        <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse"></div>
-        <div className="h-32 bg-gray-200 rounded mb-4 animate-pulse"></div>
-        <div className="h-12 bg-gray-200 rounded animate-pulse"></div>
+        <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse" aria-hidden="true"></div>
+        <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse" aria-hidden="true"></div>
+        <div className="h-32 bg-gray-200 rounded mb-4 animate-pulse" aria-hidden="true"></div>
+        <div className="h-12 bg-gray-200 rounded animate-pulse" aria-hidden="true"></div>
       </div>
     </section>
   ),
 });
 
 const FooterSection = dynamic(() => import("@/components/layouts/footer/footer-section"), {
-  loading: () => <div className="h-20 bg-gray-100 animate-pulse" />,
+  loading: () => <div className="h-20 bg-gray-100 animate-pulse" aria-label="Loading footer" />,
 });
 
 // Cache dictionary data for better performance
@@ -74,16 +74,21 @@ async function getPageData(lang: "en" | "de" | "fa") {
     return { dictionary, error: null };
   } catch (error) {
     console.error("Dictionary loading failed:", error);
-    // Fallback to English for better UX
+    // Fallback to English 
     const fallbackDict = await getDictionary("en");
     return { dictionary: fallbackDict, error: "Failed to load language" };
   }
 }
 
-// Optimized loading component for better UX
+// Optimized loading component
 function LoadingFallback({ componentName }: { componentName: string }) {
   return (
-    <div className="flex justify-center items-center py-8">
+    <div 
+      className="flex justify-center items-center py-8" 
+      role="status" 
+      aria-live="polite"
+      aria-label={`Loading ${componentName}`}
+    >
       <div className="text-sm text-gray-500">Loading {componentName}...</div>
     </div>
   );
@@ -99,21 +104,25 @@ export default async function Home({
 
   return (
     <>
-      <header>
-        <Suspense fallback={<div className="h-16 bg-background animate-pulse" />}>
+      <header role="banner">
+        <Suspense fallback={<div className="h-16 bg-background animate-pulse" aria-label="Loading navigation" />}>
           <NavbarComponent t={t} />
         </Suspense>
       </header>
       
-      <main>
+      <main role="main" id="main">
         {/* Language loading error banner */}
         {error && (
-          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 text-center text-sm">
+          <div 
+            className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 text-center text-sm"
+            role="alert"
+            aria-live="polite"
+          >
             Language loading issue: Showing English version
           </div>
         )}
         
-        {/* Hero section - critical, keep above the fold */}
+        {/* Hero section */}
         <Suspense fallback={<LoadingFallback componentName="hero section" />}>
           <HeroSection t={t.Hero} />
         </Suspense>
@@ -128,8 +137,8 @@ export default async function Home({
           <ProjectsSection t={t.ProjectsSection} />
         </Suspense>
 
-        {/* FAQ - already optimized, no lazy loading needed if small */}
-        <FAQ t={t.faq} />
+        {/* FAQ - already optimized, no lazy loading */}
+        <FaqComponent t={t.faq} />
         
         {/* Contact section */}
         <Suspense fallback={<LoadingFallback componentName="contact form" />}>
@@ -138,7 +147,7 @@ export default async function Home({
       </main>
       
       {/* Footer */}
-      <Suspense fallback={<div className="h-20 bg-gray-100 animate-pulse" />}>
+      <Suspense fallback={<div className="h-20 bg-gray-100 animate-pulse" aria-label="Loading footer" />}>
         <FooterSection t={t.Footer} />
       </Suspense>
     </>

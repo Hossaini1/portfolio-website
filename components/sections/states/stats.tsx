@@ -20,15 +20,27 @@ export default function StatsSection({ t }: { t: HeroType }) {
   ];
 
   return (
-    <section className="mt-17 md:mt-27 lg:mt-32">
+    <section className="mt-17 md:mt-27 lg:mt-32" aria-labelledby="stats-heading">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
+        <h2 id="stats-heading" className="sr-only">Achievement Statistics</h2>
+        <div 
+          className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0"
+          role="list"
+          aria-label="Statistics overview"
+        >
           {stats.map((stat) => (
-            <div key={stat.key} className="space-y-4">
-              <div className="text-4xl md:text-5xl font-bold">
+            <div 
+              key={stat.key} 
+              className="space-y-4"
+              role="listitem"
+            >
+              <div 
+                className="text-4xl md:text-5xl font-bold"
+                aria-label={`${stat.count} ${stat.label}`}
+              >
                 {stat.count}
               </div>
-              <p className="pb-2">{stat.label}</p>
+              <p className="pb-2 text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </div>

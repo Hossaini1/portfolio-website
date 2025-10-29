@@ -11,12 +11,12 @@ import profileImage from '@/public/images/profile-image.png'
 
 export default function AvatarComponent() {
   return (
-    <Tooltip>
+    <Tooltip delayDuration={100}>
       <TooltipTrigger asChild>
         <Avatar>
-         <Image className="size-12 bg-slate-400 " src={profileImage} alt="profile-image" width={20} height={20}/> 
+         <Image src={profileImage} alt="profile-image" className="size-12 bg-slate-400 "  width={20} height={20} priority/> 
         </Avatar>
-      </TooltipTrigger>
+      </TooltipTrigger >
       <TooltipContent className="font-semibold">Ali Naghi Hossaini</TooltipContent>
     </Tooltip>
   );

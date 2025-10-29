@@ -11,13 +11,17 @@ const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
       className="h-20 md:h-22 lg:h-24 bg-background border-b sticky top-0 z-50"
       role="navigation" 
       aria-label="Main navigation"
+      itemScope
+      itemType="https://schema.org/SiteNavigationElement"
     >
       <div className="h-full flex items-center justify-between max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo/Avatar*/}
-        <Avatar/>
+        {/* Logo/Avatar */}
+        <div itemScope itemType="https://schema.org/Person">
+          <Avatar />
+        </div>
 
-        {/* Desktop navigation */}
-        <div className="flex items-center gap-8">
+        {/* Desktop navigation*/}
+        <div className="flex items-center gap-8" role="menubar" aria-label="Main menu">
           <NavMenu 
             t={t.Nav} 
             className="hidden md:block" 
@@ -25,21 +29,21 @@ const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
           />
         </div>
 
-        {/* Action controls*/}
-        <div className="flex items-center gap-2">
+        {/* Action controls */}
+        <div className="flex items-center gap-2" role="toolbar" aria-label="Site preferences">
           {/* Language selector */}
           <SelectLang 
             t={t.Languages} 
-            aria-label="Language selection"
+            aria-label="Select language"
           />
           
           {/* Theme toggle */}
           <ModeToggle 
-            aria-label="Toggle dark mode"
+            aria-label="Toggle between dark and light mode"
           />
 
-          {/* Mobile menu*/}
-          <div className="md:hidden" aria-label="Mobile navigation menu">
+          {/* Mobile menu */}
+          <div className="md:hidden" aria-label="Mobile navigation controls">
             <NavigationSheet t={t} />
           </div>
         </div>
