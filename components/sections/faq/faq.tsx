@@ -35,9 +35,9 @@ const FAQ = ({t}:{t:FaqType}) => {
   return (
     <div className="min-h-full flex items-center justify-center mt-17 md:mt-27 lg:mt-41 px-5">
       <div className="max-w-xl">
-        <h2 className="text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter">
+        <h4 className="text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter text-center sm:text-start">
           {t?.title ?? "Questions & Answers"}
-        </h2>
+        </h4>
 
         <Accordion type="single" className="mt-6" defaultValue="question-0">
           {faqItems.map((item, index) => (

@@ -1,4 +1,4 @@
-import { Geist, Lora, Montserrat, Poppins, Vazirmatn } from "next/font/google";
+import { Lora, Montserrat } from "next/font/google";
 
 const fontLora = Lora({
   variable: "--font-lora",
@@ -16,23 +16,23 @@ const fontMontserrat = Montserrat({
   adjustFontFallback: true,
 });
 
-const fontGeist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-  display: "swap",
-});
+// const fontGeist = Geist({
+//   variable: "--font-geist",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
-const fontVazirmatn = Vazirmatn({
-  variable: "--font-vazirmatn",
-  subsets: ["arabic", "latin"],
-  display: "swap",
-});
+// const fontVazirmatn = Vazirmatn({
+//   variable: "--font-vazirmatn",
+//   subsets: ["arabic", "latin"],
+//   display: "swap",
+// });
 
-const fontPoppins = Poppins({
-  variable: "--font-Poppins",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "600",
-});
+// const fontPoppins = Poppins({
+//   variable: "--font-Poppins",
+//   subsets: ["latin"],
+//   display: "swap",
+//   weight: "600",
+// });
 
 export {  fontLora, fontMontserrat};

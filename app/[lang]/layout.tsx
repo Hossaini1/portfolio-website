@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { ThemeProvider } from "next-themes";
-import { ScrollNavigation } from "@/components/ui/scroll-navigation.tsx";
 import { fontLora, fontMontserrat } from "@/lib/fonts/google-fonts";
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import { ThemeProvider } from "next-themes";
+
+// Lazy load components for better performance
+const ScrollNavigation = dynamic(
+  () => import('@/components/ui/scroll-navigation.tsx').then(mod => mod.ScrollNavigation),
+  { 
+    loading: () => <div className="h-16 bg-transparent" />
+  }
+);
 
 
 export async function generateMetadata({
@@ -30,9 +38,8 @@ export async function generateMetadata({
       default: titles[lang as keyof typeof titles] || titles.en,
       template: `%s | ${titles[lang as keyof typeof titles] || titles.en}`,
     },
-    description:
-      descriptions[lang as keyof typeof descriptions] || descriptions.en,
-    keywords: ["nextjs", "portfolio"],
+    description: descriptions[lang as keyof typeof descriptions] || descriptions.en,
+    keywords: ["nextjs", "portfolio", "fullstack", "developer"],
     authors: [{ name: "Ali Hossaini" }],
     creator: "Ali Hossaini",
     metadataBase: new URL("https://alihossaini.de"),
@@ -43,12 +50,22 @@ export async function generateMetadata({
         fa: "/fa",
       },
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: 'website',
+      siteName: 'Ali Hossaini Portfolio',
+    },
   };
 }
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "de" }, { lang: "fa" }];
 }
+
+export const revalidate = 86400;
 
 export default async function RootLayout({
   children,
@@ -65,16 +82,18 @@ export default async function RootLayout({
         className={`${fontMontserrat.variable} ${fontLora.variable} font-sans antialiased`}
         dir={lang === "fa" ? "rtl" : "ltr"}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-          enableColorScheme
-        >
-          <ScrollNavigation />
-          {children}
-        </ThemeProvider>
+        <Suspense fallback={<>{children}</>}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            enableColorScheme
+          >
+            <ScrollNavigation />
+            {children}
+          </ThemeProvider>
+        </Suspense>
       </body>
     </html>
   );
