@@ -123,6 +123,27 @@
       "sunday": "Sunday: Closed"
     }
   },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How can I contact you about my project?",
+        "answer": "You can reach me via →email← at a@gmail.com or by using the →contact form← directly on this website Simply describe your project and I'll get back to you as soon as possible for a free initial consultation"
+      },
+      {
+        "question": "How quickly will I receive a response?",
+        "answer": "I typically respond within →24 hours← on business days Often much faster →Mon-Fri← Within 4-8 hours →Weekends← By the following Monday"
+      },
+      {
+        "question": "What information should I include in my first message?",
+        "answer": "For a quick assessment please include →Project description← What you'd like to build →Timeline← When you'd like to start/launch →Budget range← Optional but helpful for tailored proposals"
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "I accept →bank transfer← →Visa← →MasterCard← and →PayPal← providing secure payment options for all clients Payment terms are typically →50% upfront← and →50% upon completion←"
+      }
+    ]
+  },
    "Footer": {
     "socialMedia": "Social Media", 
     "copyright": "All rights reserved.",

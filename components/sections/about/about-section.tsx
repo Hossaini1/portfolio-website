@@ -15,15 +15,15 @@ import { AboutType } from "@/types/dictionary-types";
 export default function AboutSection({ t }: { t: AboutType }) {
   return (
     <section id="about">
-      <div className="  dark:bg-background mt-17 md:mt-27 lg:mt-40 ">
+      <div className="  dark:bg-background mt-17 md:mt-27 lg:mt-41 ">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-start sm:grid-cols-2 gap-16 sm:gap-10 md:gap-30 lg:gap-34 items-center">
             
             <div className="dark:bg-background relative mx-auto w-fit order-2 sm:order-1">
-              <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold pb-4 text-center sm:text-start">
+              <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold pb-5 text-center sm:text-start">
                 {t?.title ?? "About Me"}
               </h2>
-              <p className="text-accent-foreground text-justify sm:text-start text-base md:text-lg lg:text-xl leading-7 md:leading-8 tracking-wide max-w-3xl mx-auto sm:mx-0 space-y-4">
+              <p className="text-accent-foreground text-center text-base md:text-lg lg:text-xl leading-7 md:leading-9 text-justify">
                 {t?.description??
                   "Hi, I'm a Full Stack Web Developer\nPassionate about modern web technologies in developing user-friendly frontend applications and backend solutions. Always striving to write clean and efficient code and learn new technologies.\n\nWith an eye for detail and the ability to combine both technical and design aspects, I create digital experiences that not only function but also inspire. Every project is an opportunity for me to grow and innovate."}
               </p>

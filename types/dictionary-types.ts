@@ -120,6 +120,15 @@ export interface ContactType {
   };
 }
 
+export interface FaqType {
+  title: string;
+    items: {
+      question: string;
+      answer: string;
+    }[];
+  };
+
+
 export interface FooterType {
   socialMedia: string;
   copyright: string;

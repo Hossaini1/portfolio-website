@@ -308,7 +308,7 @@ const ContactSection = ({ t }: { t: ContactType }) => {
   });
 
   return (
-    <div className="flex items-center justify-center mt-18 md:mt-27 lg:mt-37">
+    <div className="flex items-center justify-center mt-18 md:mt-27 lg:mt-41">
       <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
         <h3 className="font-semibold text-4xl md:text-5xl text-center md:text-start">
           {t?.title ?? "Contact Me"}

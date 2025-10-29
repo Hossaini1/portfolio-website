@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { getDictionary } from "../../lib/i18n/dictionaries";
+import FAQ from "@/components/sections/faq/faq";
 
 
 const NavbarComponent = dynamic(() => import("@/components/layouts/navbar/navbar-component"), {
@@ -118,10 +119,14 @@ export default async function Home({
         <Suspense fallback={<div>Loading projects section...</div>}>
           <ProjectsSection t={t.ProjectsSection} />
         </Suspense>
+
+        <FAQ t={t.faq}/>
         
         <Suspense fallback={<div>Loading contact...</div>}>
           <ContactSection t={t.Contact} />
         </Suspense>
+
+        
       </main>
       
       
