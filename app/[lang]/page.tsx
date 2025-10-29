@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
-import { getDictionary } from "./dictionaries";
+import { getDictionary } from "../../lib/i18n/dictionaries";
 
 
-const NavbarComponent = dynamic(() => import("@/components/navbar/navbar-component"), {
+const NavbarComponent = dynamic(() => import("@/components/layouts/navbar/navbar-component"), {
   loading: () => <div className="h-16 bg-background animate-pulse" />,
   ssr: true 
 });
 
-const HeroSection = dynamic(() => import("@/components/hero/hero-section"), {
+const HeroSection = dynamic(() => import("@/components/sections/hero/hero-section"), {
   loading: () => (
     <section className="min-h-screen flex items-center justify-center">
       <div className="text-center">
@@ -20,7 +20,7 @@ const HeroSection = dynamic(() => import("@/components/hero/hero-section"), {
   ssr: true
 });
 
-const AboutSection = dynamic(() => import("@/components/integrations/about-section"), {
+const AboutSection = dynamic(() => import("@/components/sections/about/about-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
@@ -34,7 +34,7 @@ const AboutSection = dynamic(() => import("@/components/integrations/about-secti
   ssr: true
 });
 
-const ProjectsSection = dynamic(() => import("@/components/projectssection/projects-section"), {
+const ProjectsSection = dynamic(() => import("@/components/sections/projectssection/projects-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-12 mx-auto animate-pulse"></div>
@@ -52,7 +52,7 @@ const ProjectsSection = dynamic(() => import("@/components/projectssection/proje
   ssr: true
 });
 
-const ContactSection = dynamic(() => import("@/components/contact/contact-section"), {
+const ContactSection = dynamic(() => import("@/components/sections/contact/contact-section"), {
   loading: () => (
     <section className="py-20">
       <div className="h-8 bg-gray-200 rounded w-48 mb-8 mx-auto animate-pulse"></div>
@@ -67,7 +67,7 @@ const ContactSection = dynamic(() => import("@/components/contact/contact-sectio
   ssr: true
 });
 
-const FooterSection = dynamic(() => import("@/components/footer/footer-section"), {
+const FooterSection = dynamic(() => import("@/components/layouts/footer/footer-section"), {
   loading: () => <div className="h-20 bg-gray-100 animate-pulse" />,
   ssr: true
 });
@@ -94,7 +94,7 @@ export default async function Home({
 
   return (
     <>
-      <header className="sticky top-0 left-0 right-0 z-50">
+      <header >
         <Suspense fallback={<div className="h-16 bg-background animate-pulse" />}>
           <NavbarComponent t={t}/>
         </Suspense>

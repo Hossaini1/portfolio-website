@@ -13,7 +13,7 @@ import {
   NodejsIcon,
   MongodbIcon,
   MysqlIcon,
-} from "../icons/Icons";
+} from "../../icons/Icons";
 
 export interface CloudLogoType {
   name: string;

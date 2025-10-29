@@ -16,7 +16,7 @@ export function validateContactForm(data: ContactFormData): string | null {
   if (firstName.length > 50) return 'First name must be less than 50 characters';
   if (lastName.length < 2) return 'Last name must be at least 2 characters';
   if (lastName.length > 50) return 'Last name must be less than 50 characters';
-  if (message.length < 1) return 'Message must be at least 10 characters';
+  if (message.length < 2) return 'Message must be at least 10 characters';
   if (message.length > 724) return 'Message must be less than 2000 characters';
   if (email.length > 254) return 'Email must be less than 254 characters';
 

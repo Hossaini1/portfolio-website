@@ -5,7 +5,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Image from "next/image";
-import profileImage from '../../public/uploads/profile-image.png'
+import profileImage from '@/public/images/profile-image.png'
 
 
 

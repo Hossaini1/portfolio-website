@@ -5,9 +5,9 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { useMemo, memo } from "react";
 
-import portfolioImage from "@/public/uploads/portfolio.png";
-import vpnImage from "@/public//uploads/vpn-site.png";
-import translateImage from "@/public//uploads/vue-translate.png";
+import portfolioImage from "@/public/images/portfolio.png";
+import vpnImage from "@/public/images/vpn-site.png";
+import translateImage from "@/public/images/vue-translate.png";
 
 interface Project {
   title: string;
@@ -156,7 +156,7 @@ const ProjectsSection = ({ t }: ProjectsSectionProps) => {
   }, [t?.Projects]);
 
   return (
-    <section className="flex items-center justify-center mt-17 md:mt-27 lg:mt-41 px-4">
+    <section className="flex items-center justify-center mt-17 md:mt-27 lg:mt-41 px-4" id="projects">
       <div className="w-full max-w-7xl">
         <header className="text-center md:text-start mb-12 md:mb-14">
           <h3 className="text-4xl md:text-5xl font-semibold">

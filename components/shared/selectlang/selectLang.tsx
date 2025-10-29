@@ -2,7 +2,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 import { Languages, Check } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import {  NavAndLanguagesType } from "@/types/dictionary-types"
 
 

@@ -1,8 +1,8 @@
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
-import { ModeToggle } from "../togglemode/toggleMode";
-import SelectLang from "../selectlang/selectLang";
-import AvatarComponent from "../avatar/avatar-component";
+import { ModeToggle } from "../../shared/togglemode/toggleMode";
+import SelectLang from "../../shared/selectlang/selectLang";
+import AvatarComponent from "../../shared/avatar/avatar-component";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 
 const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {

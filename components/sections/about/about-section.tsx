@@ -2,8 +2,8 @@ import {
   Gemini,
   MediaWiki,
   GooglePaLM,
-} from "@/components/integrations/logos";
-import { LogoIcon } from "@/components/integrations/logos/logo";
+} from "@/components/sections/about/logos";
+import { LogoIcon } from "@/components/sections/about/logos/logo";
 import { cn } from "@/lib/utils";
 import { logoLibrary } from "../cloudlogo/cloud-logo";
 import ChatGPT from "./logos/ChatGPT";
@@ -14,7 +14,7 @@ import { AboutType } from "@/types/dictionary-types";
 
 export default function AboutSection({ t }: { t: AboutType }) {
   return (
-    <section>
+    <section id="about">
       <div className="  dark:bg-background mt-17 md:mt-27 lg:mt-40 ">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-start sm:grid-cols-2 gap-16 sm:gap-10 md:gap-30 lg:gap-34 items-center">

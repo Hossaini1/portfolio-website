@@ -2,24 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "next-themes";
+import { ScrollNavigation } from "@/components/ui/scroll-navigation.tsx";
+import { fontLora, fontMontserrat } from "@/lib/fonts/google-fonts";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap", 
-  preload: true,
-  adjustFontFallback: true, 
-  fallback: ["-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono", 
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-  fallback: ["Monaco", "Courier New", "monospace"], 
-});
 
 export async function generateMetadata({
   params,
@@ -77,7 +62,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${fontMontserrat.variable} ${fontLora.variable} font-sans antialiased`}
         dir={lang === "fa" ? "rtl" : "ltr"}
       >
         <ThemeProvider
@@ -87,6 +72,7 @@ export default async function RootLayout({
           disableTransitionOnChange
           enableColorScheme
         >
+          <ScrollNavigation />
           {children}
         </ThemeProvider>
       </body>

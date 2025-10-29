@@ -1,5 +1,26 @@
 import { JSX } from "react";
 
+export const DotIcon = (): JSX.Element => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 36 36"
+  >
+    <path
+      fill="currentColor"
+      d="M18 11a7 7 0 1 1-7 7a7 7 0 0 1 7-7"
+      className="clr-i-outline clr-i-outline-path-1"
+    />
+    <path
+      fill="currentColor"
+      d="M18 34a16 16 0 1 1 16-16a16 16 0 0 1-16 16m0-30a14 14 0 1 0 14 14A14 14 0 0 0 18 4"
+      className="clr-i-outline clr-i-outline-path-2"
+    />
+    <path fill="none" d="M0 0h36v36H0z" />
+  </svg>
+);
+
 export const SunIcon = (): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +112,7 @@ export const CloseIcon = (): JSX.Element => (
 );
 
 // Social Media Icons
+
 export const GithubIcon = (): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -689,8 +711,7 @@ export const MysqlIcon = (): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 128 128"
-        className="h-20 w-fit"
-
+    className="h-20 w-fit"
   >
     <path
       fill="#00618A"
