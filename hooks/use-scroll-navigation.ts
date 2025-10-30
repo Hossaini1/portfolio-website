@@ -1,12 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export function useScrollNavigation() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     const handleScroll = () => {
       // Navigation anzeigen wenn 200px nach unten gescrollt
       if (window.pageYOffset > 200) {
@@ -31,27 +34,40 @@ export function useScrollNavigation() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Nur auf Client ausführen
+    if (typeof window !== 'undefined') {
+      handleScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const scrollToTop = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  };
+  }, []);
 
-  const scrollToBottom = () => {
-    window.scrollTo({ 
-      top: document.documentElement.scrollHeight, 
-      behavior: 'smooth' 
-    });
-  };
+  const scrollToSection = useCallback((sectionId: string) => {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
+  const scrollToBottom = useCallback(() => {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      window.scrollTo({ 
+        top: document.documentElement.scrollHeight, 
+        behavior: 'smooth' 
+      });
+    }
+  }, []);
 
   return { 
     isVisible, 

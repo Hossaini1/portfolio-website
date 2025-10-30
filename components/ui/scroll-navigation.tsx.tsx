@@ -1,13 +1,24 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { DotIcon } from '../icons/Icons';
 import { useScrollNavigation } from '@/hooks/use-scroll-navigation';
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 
 export function ScrollNavigation() {
+  const [mounted, setMounted] = useState(false);
   const { isVisible, scrollToTop, scrollToSection, scrollToBottom } = useScrollNavigation();
+
+  // Nur client-seitig rendern nach Hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Während Hydration nichts rendern
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className={cn(
@@ -39,7 +50,6 @@ export function ScrollNavigation() {
         </div>
       </Button>
 
-
       <Button
         onClick={() => scrollToSection('about')}
         className={cn(
@@ -60,7 +70,6 @@ export function ScrollNavigation() {
           </div>
         </div>
       </Button>
-
 
       <Button
         onClick={scrollToBottom}
