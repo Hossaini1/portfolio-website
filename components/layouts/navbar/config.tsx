@@ -19,7 +19,7 @@ import {
 
 export const createNavbarConfig = (t: NavAndLanguagesType["Nav"]) => {
   const navbarItems = [
-    { label: t?.home ?? "Home", href: "/" },
+    { label: t?.home ?? "Home", href: "#home" },
     { label: t?.about ?? "About", href: "#about" },
     { label: t?.projects ?? "Projects", href: "#projects" },
     { label: t?.contact ?? "Contact", href: "#contact" },
