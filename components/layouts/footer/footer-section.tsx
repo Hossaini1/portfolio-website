@@ -13,31 +13,31 @@ import Link from "next/link";
 const SOCIAL_LINKS = [
   { 
     Icon: Linkedin, 
-    linkDestination: "#",
+    linkDestination: "https://www.linkedin.com/in/hossaini/",
     linkLabel: "Visit our LinkedIn",
     uniqueId: "linkedin"
   },
   { 
     Icon: FacebookIcon, 
-    linkDestination: "#",
+    linkDestination: "https://www.facebook.com/profile.php?id=61583266311562",
     linkLabel: "Visit our Facebook",
     uniqueId: "facebook"
   },
   { 
     Icon: YoutubeIcon, 
-    linkDestination: "#",
+    linkDestination: "https://www.youtube.com/@AliNaghiHossaini",
     linkLabel: "Visit our YouTube", 
     uniqueId: "youtube"
   },
   { 
     Icon: Instagram, 
-    linkDestination: "#",
+    linkDestination: "https://www.instagram.com/alinaghihossaini/",
     linkLabel: "Visit our Instagram",
     uniqueId: "instagram"
   },
   { 
     Icon: GithubIcon, 
-    linkDestination: "#",
+    linkDestination: "https://github.com/Hossaini1",
     linkLabel: "Visit our GitHub",
     uniqueId: "github"
   },
