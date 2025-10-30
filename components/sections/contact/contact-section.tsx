@@ -207,8 +207,8 @@ const ContactSection = ({ t }: { t: ContactType }) => {
 
   return (
     <section 
+    id="contact"
       className="flex items-center justify-center mt-18 md:mt-27 lg:mt-41" 
-      id="contact"
       aria-labelledby="contact-heading"
     >
       <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">

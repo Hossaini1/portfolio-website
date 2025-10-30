@@ -107,17 +107,19 @@ import { Languages, Check } from "lucide-react";
 import { Button } from "../../ui/button";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
 
+// Konstanten außerhalb der Komponente definieren - DAS IST DIE LÖSUNG
+const validLocales = ["en", "de", "fa"] as const;
+type Locale = (typeof validLocales)[number];
+
 export default function SelectLang({ t }: { t: NavAndLanguagesType["Languages"] }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const validLocales = ["en", "de", "fa"] as const;
-  type Locale = (typeof validLocales)[number];
-
+  // Jetzt keine Dependency mehr nötig, da validLocales konstant ist
   const currentLocale = useMemo((): Locale => {
     const extractedLocale = pathname.split("/")[1];
     return validLocales.find((locale) => locale === extractedLocale) || "en";
-  }, [pathname]);
+  }, [pathname]); // ← Nur pathname als Dependency
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
