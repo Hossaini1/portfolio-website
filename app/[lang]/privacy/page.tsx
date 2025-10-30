@@ -231,7 +231,7 @@ export default function PrivacyPage() {
             <div className="space-y-4 text-foreground leading-relaxed">
               <p>
                 If you have any questions about this privacy policy or how I handle your data, 
-                please don't hesitate to contact me:
+                please don&apos;t hesitate to contact me:
               </p>
               <div className="bg-muted p-4 rounded-lg">
                 <p className="font-medium">Ali Naghi Hossaini</p>
