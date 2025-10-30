@@ -22,10 +22,9 @@ export const NavigationSheet = ({ t }: { t: NavAndLanguagesType }) => {
   const pathname = usePathname();
   const { navbarItems, megaMenuItems } = createNavbarConfig(t.Nav);
 
-  // Sheet schließen wenn Route sich ändert
   useEffect(() => {
     setIsOpen(false);
-    setIsBlogsOpen(false); // Blog dropdown auch schließen
+    setIsBlogsOpen(false);
   }, [pathname]);
 
   // Funktion für Anchor-Links (wird nur client-seitig ausgeführt)
@@ -129,7 +128,7 @@ export const NavigationSheet = ({ t }: { t: NavAndLanguagesType }) => {
           </button>
         </nav>
 
-        {/* Blogs Dropdown Content - UNTEN mit Scroll */}
+        {/* Blogs Dropdown Content */}
         <div 
           id="blogs-dropdown-content"
           className={`flex-1 overflow-hidden transition-all duration-300 ease-in-out ${
