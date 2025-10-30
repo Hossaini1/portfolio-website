@@ -9,7 +9,7 @@ export const BackgroundPattern = () => {
 
   return (
       <Particles
-        className=" absolute inset-0 h-[100vh] overflow-hidden"
+        className=" absolute inset-0 h-[100%] overflow-hidden"
         quantity={100}
         ease={80}
         color={isLightTheme ? "#000" : "#ffffffff"}

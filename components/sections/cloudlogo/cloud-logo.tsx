@@ -40,7 +40,7 @@ const CloudLogo = memo(function CloudLogo({
   );
 
   return (
-    <section 
+    <div 
       className="bg-background overflow-hidden"
       aria-labelledby="cloud-logo-title"
       role="region" 
@@ -48,10 +48,10 @@ const CloudLogo = memo(function CloudLogo({
       <div className="group relative m-auto max-w-6xl px-6 mt-17 md:mt-26 lg:mt-30">
         <div className="flex flex-col items-center md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
-            <h2 id="cloud-logo-title" className="text-center text-md mb-4"> 
+            <h3 id="cloud-logo-title" className="text-center text-md mb-4"> 
               <strong>{title}</strong> 
               <span className="block font-normal">{subtitle}</span>
-            </h2>
+            </h3>
           </div>
           
           {/* Logo slider section */}
@@ -67,7 +67,7 @@ const CloudLogo = memo(function CloudLogo({
               {logoElements}
             </InfiniteSlider>
 
-            {/* Progressive blur effects - decorative only */}
+            {/* Progressive blur effects */}
             <div className="max-md:hidden" aria-hidden="true">
               <ProgressiveBlur
                 className="pointer-events-none absolute left-0 top-0 h-full w-20"
@@ -83,7 +83,7 @@ const CloudLogo = memo(function CloudLogo({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 });
 

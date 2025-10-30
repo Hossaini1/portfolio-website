@@ -79,7 +79,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
     <article 
       className="group flex flex-col w-full border border-border rounded-xl overflow-hidden transition-all duration-300 bg-background hover:translate-y-[-4px]"
       itemScope
-      itemType="https://schema.org/CreativeWork"
+      
     >
       <div className="relative w-full aspect-[4/3] bg-muted overflow-hidden">
         <Image
@@ -154,9 +154,9 @@ const ProjectsSection = ({ t }: ProjectsSectionProps) => {
     >
       <div className="w-full max-w-7xl">
         <header className="text-center md:text-start mb-12 md:mb-14">
-          <h2 id="projects-heading" className="text-4xl md:text-5xl font-semibold">
+          <h3 id="projects-heading" className="text-4xl md:text-5xl font-semibold">
             {t?.title ?? "My Latest Projects"}
-          </h2>
+          </h3>
           <p className="text-base md:text-xl text-muted-foreground mt-4 max-w-2xl md:mx-0">
             {t?.subtitle ?? "Discover a selection of my recent projects"}
           </p>

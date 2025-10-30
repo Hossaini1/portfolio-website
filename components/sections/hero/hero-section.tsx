@@ -8,7 +8,7 @@ import { HeroType } from "@/types/dictionary-types";
 
 const HeroSection = ({ t }: { t: HeroType }) => {
   return (
-    <>
+    <section id="hero" aria-labelledby="hero-section">
       <div className="mt-17 md:mt-27 lg:mt-37 flex items-center justify-center h-full">
         <BackgroundPattern />
         <div className="relative z-10 text-center max-w-3xl">
@@ -55,7 +55,7 @@ const HeroSection = ({ t }: { t: HeroType }) => {
       </div>
 
       <StatsSection t={t} />
-    </>
+    </section>
   );
 };
 

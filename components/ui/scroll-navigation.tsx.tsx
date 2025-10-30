@@ -11,7 +11,7 @@ export function ScrollNavigation() {
 
   return (
     <div className={cn(
-      "fixed right-1 md:right-4 lg:right-6 z-50 transition-all duration-500 ease-in-out flex flex-col gap-10 md:gap-16",
+      "fixed right-1 md:right-4 lg:right-5 xl:right-6 z-50 transition-all duration-500 ease-in-out flex flex-col gap-10 md:gap-16",
       "top-1/2 transform -translate-y-1/2",
       isVisible 
         ? "opacity-100 translate-x-0 scale-100" 

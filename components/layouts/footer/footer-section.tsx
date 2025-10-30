@@ -55,8 +55,8 @@ const FooterSection = ({ t }: { t: FooterType }) => {
       linkPath: "/privacy",
     },
     {
-      linkTitle: t?.links?.contact ?? "Contact", 
-      linkPath: "/#contact",
+      linkTitle: t?.links?.contact ?? "help", 
+      linkPath: "/#ask-questions",
     },
   ];
 
@@ -82,7 +82,7 @@ const FooterSection = ({ t }: { t: FooterType }) => {
             >
               <ul 
                 className="mt-6 flex items-center gap-4 flex-wrap justify-center md:justify-start"
-                role="menubar"
+                role="list"
               >
                 {footerLinks.map(({ linkTitle, linkPath }) => (
                   <li key={linkPath} role="none">
@@ -103,11 +103,11 @@ const FooterSection = ({ t }: { t: FooterType }) => {
             <div 
               className="flex flex-col items-center md:items-start text-center md:text-left"
               itemScope
-              itemType="https://schema.org/Organization"
+             
             >
-              <h2 className="font-medium text-lg md:text-xl sr-only">
+              <h4 className="font-medium text-lg md:text-xl sr-only">
                 {t?.socialMedia ?? "Social Media"}
-              </h2>
+              </h4>
               <p 
                 className="font-medium text-lg md:text-xl"
                 aria-hidden="true"

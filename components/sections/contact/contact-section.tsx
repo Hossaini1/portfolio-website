@@ -212,12 +212,12 @@ const ContactSection = ({ t }: { t: ContactType }) => {
       aria-labelledby="contact-heading"
     >
       <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
-        <h1 
+        <h3 
           id="contact-heading"
           className="font-semibold text-4xl md:text-5xl text-center md:text-start"
         >
           {t?.title ?? "Contact Me"}
-        </h1>
+        </h3>
         
         <div className="pt-14 md:pt-17 grid lg:grid-cols-2 gap-16 md:gap-10 text-center md:text-start">
           <ContactInfoSection t={t} />

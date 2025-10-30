@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { logoLibrary } from "../cloudlogo/cloud-logo";
 import { AboutType } from "@/types/dictionary-types";
 
-// Lazy load logo components for better performance
+// Lazy load logo components 
 const Gemini = lazy(() => import("./logos/Gemini"));
 const MediaWiki = lazy(() => import("./logos/MediaWiki"));
 const GooglePaLM = lazy(() => import("./logos/GooglePaLM"));
@@ -28,20 +28,20 @@ export default function AboutSection({ t }: { t: AboutType }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-start sm:grid-cols-2 gap-16 sm:gap-10 md:gap-30 lg:gap-34 items-center">
           
-          {/* Text content - semantic structure for better SEO */}
+          {/* Text content  */}
           <div className="dark:bg-background relative mx-auto w-fit order-2 sm:order-1">
-            <h1 
+            <h2 
               id="about-heading"
               className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold pb-5 text-center sm:text-start"
             >
               {t?.title ?? "About Me"}
-            </h1>
+            </h2>
             <p className="text-accent-foreground text-center text-base md:text-lg lg:text-xl leading-7 md:leading-9 text-justify whitespace-pre-line">
               {t?.description ?? "Hi, I'm a Full Stack Web Developer\nPassionate about modern web technologies in developing user-friendly frontend applications and backend solutions. Always striving to write clean and efficient code and learn new technologies.\n With an eye for detail and the ability to combine both technical and design aspects, I create digital experiences that not only function but also inspire. Every project is an opportunity for me to grow and innovate."}
             </p>
           </div>
 
-          {/* Logo grid - decorative section marked appropriately */}
+          {/* Logo grid */}
           <div 
             className="col-span-1 dark:bg-muted/50 relative mx-auto w-fit order-1 sm:order-2 self-center justify-self-center"
             aria-label="Technology tools and platforms I work with"
@@ -65,7 +65,7 @@ export default function AboutSection({ t }: { t: AboutType }) {
               </IntegrationCard>
             </div>
             
-            {/* Second row of logos - center logo has emphasis */}
+            {/* Second row of logos*/}
             <div className="mx-auto my-2 flex w-fit justify-center gap-2">
               <IntegrationCard name="Gemini">
                 <Suspense fallback={<LogoFallback />}>

@@ -20,7 +20,6 @@ export interface CloudLogoType {
   link: React.FC<{ className?: string }>;
 }
 
-// Vordefinierte Logo-Sets als const für beste Performance
 export const logoLibrary = {
   frontend: [
     { name: "HTML icon", link: HTMLIcon },

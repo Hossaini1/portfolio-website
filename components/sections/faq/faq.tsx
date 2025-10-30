@@ -42,14 +42,15 @@ const FaqComponent = ({ t }: { t: FaqType }) => {
     <section 
       className="min-h-full flex items-center justify-center mt-17 md:mt-27 lg:mt-41 px-5"
       aria-labelledby="faq-heading"
+      id="ask-questions"
     >
       <div className="max-w-xl">
-        <h4 
+        <h3 
           id="faq-heading"
           className="text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter text-center sm:text-start"
         >
           {t?.title ?? "Questions & Answers"}
-        </h4>
+        </h3>
         <Accordion 
           type="single" 
           className="mt-6" 
