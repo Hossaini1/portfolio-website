@@ -62,7 +62,7 @@ const FaqComponent = ({ t }: { t: FaqType }) => {
               key={item.id} 
               value={`question-${index}`}
             >
-              <AccordionTrigger className="text-left text-lg">
+              <AccordionTrigger className="text-start text-lg  md:text-xl">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground">

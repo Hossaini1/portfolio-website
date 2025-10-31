@@ -82,46 +82,18 @@
   "ProjectsSection": {
     "title": "Few my latest works",
     "subtitle": "Discover a selection of my recent projects",
-    
-   "Projects": [
-    {
-      "description": "Modern and responsive presentation website"
-    },
-    {
-      "description": "Translation website with real-time feature"
-    },
-    {
-      "description": "Modern landing page for VPN service"
-    }
-  ]
-  },
 
-  "Contact": {
-    "title": "Contact Me",
-    "form": {
-      "lastName": "Last Name",
-      "firstName": "First Name",
-      "email": "Email",
-      "message": "Message",
-      "terms": "I agree to the terms and conditions",
-      "submit": "Submit"
-    },
-    "office": {
-      "title": "Office",
-      "subtitle": "Kommen Sie gerne in meinem Büro vorbei.",
-      "address": "Germany, North Rhine-Westphalia"
-    },
-    "email": {
-      "title": "Email",
-      "description": "Questions? Just send an email"
-    },
-    "openingHours": {
-      "title": "Opening Hours",
-      "subtitle": "My available hours for meetings",
-      "weekdays": "Monday - Friday: 8:00 - 18:00",
-      "saturday": "Saturday: 10:00 - 14:00",
-      "sunday": "Sunday: Closed"
-    }
+    "Projects": [
+      {
+        "description": "Modern and responsive presentation website"
+      },
+      {
+        "description": "Translation website with real-time feature"
+      },
+      {
+        "description": "Modern landing page for VPN service"
+      }
+    ]
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -144,8 +116,35 @@
       }
     ]
   },
-   "Footer": {
-    "socialMedia": "Social Media", 
+  "Contact": {
+    "title": "Contact Me",
+    "form": {
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "email": "Email",
+      "message": "Message",
+      "terms": "I agree to the terms and conditions",
+      "submit": "Submit"
+    },
+    "office": {
+      "title": "Office",
+      "subtitle": "Please feel free to stop by my office",
+      "address": "Germany, North Rhine-Westphalia"
+    },
+    "email": {
+      "title": "Email",
+      "description": "Questions? Just send an email"
+    },
+    "openingHours": {
+      "title": "Opening Hours",
+      "subtitle": "My available hours for meetings",
+      "weekdays": "Monday - Friday: 8:00 - 18:00",
+      "saturday": "Saturday: 10:00 - 14:00",
+      "sunday": "Sunday: Closed"
+    }
+  },
+  "Footer": {
+    "socialMedia": "Social Media",
     "copyright": "All rights reserved.",
     "links": {
       "imprint": "Imprint",

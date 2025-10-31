@@ -98,7 +98,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
           <h3 className="text-lg md:text-xl font-bold tracking-tight mb-2 text-foreground" itemProp="name">
             {project.title}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed" itemProp="description">
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed" itemProp="description">
             {project.description}
           </p>
         </div>
@@ -122,7 +122,7 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-muted dark:bg-background inline-flex items-center justify-center w-full py-2.5 px-4 text-sm font-medium text-primary transition-colors border border-primary/20 rounded-lg hover:bg-primary/5 hover:border-primary/30"
+              className="text-sm md:text-base bg-muted dark:bg-background inline-flex items-center justify-center w-full py-2.5 px-4 font-medium text-primary transition-colors border border-primary/20 rounded-lg hover:bg-primary/5 hover:border-primary/30"
               aria-label={`View live demo or code for ${project.title}`}
               itemProp="url"
             >

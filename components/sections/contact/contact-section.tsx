@@ -102,10 +102,10 @@ const ContactInfoSection = memo(function ContactInfoSection({ t }: { t: ContactT
         >
           <MailIcon className="w-6 h-6" />
         </div>
-        <h2 className="mt-6 font-semibold text-lg md:text-xl">
+        <h4 className="mt-6 font-semibold text-lg md:text-xl">
           {t?.email?.title ?? "Email"}
-        </h2>
-        <p className="my-2.5 text-muted-foreground text-sm">
+        </h4>
+        <p className="my-2.5 text-muted-foreground text-sm md:text-base">
           {t?.email?.description ?? "For questions, feel free to send me an email"}
         </p>
         <Link
@@ -113,7 +113,7 @@ const ContactInfoSection = memo(function ContactInfoSection({ t }: { t: ContactT
           href="mailto:alinaghihossaini@gmail.com"
           aria-label="Send email to alinaghihossaini@gmail.com"
         >
-          alinaghihossaini@gmail.com
+          AliNaghiHossaini@gmail.com
         </Link>
       </div>
 
@@ -124,10 +124,10 @@ const ContactInfoSection = memo(function ContactInfoSection({ t }: { t: ContactT
         >
           <MapPinIcon className="w-6 h-6" />
         </div>
-        <h2 className="mt-6 font-semibold text-lg md:text-xl">
+        <h4 className="mt-6 font-semibold text-lg md:text-xl">
           {t?.office?.title ?? "Office"}
-        </h2>
-        <p className="my-2.5 text-muted-foreground text-sm">
+        </h4>
+        <p className="my-2.5 text-muted-foreground text-sm md:text-base">
           {t?.office?.subtitle ?? "Feel free to drop by my office."}
         </p>
         <Link
@@ -148,10 +148,10 @@ const ContactInfoSection = memo(function ContactInfoSection({ t }: { t: ContactT
         >
           <ClockIcon className="w-6 h-6" />
         </div>
-        <h2 className="mt-6 font-semibold text-lg md:text-xl">
+        <h4 className="mt-6 font-semibold text-lg md:text-xl">
           {t?.openingHours?.title ?? "Opening Hours"}
-        </h2>
-        <p className="my-2.5 text-muted-foreground text-sm">
+        </h4>
+        <p className="my-2.5 text-muted-foreground text-sm md:text-base">
           {t?.openingHours?.subtitle ?? "My available hours for meetings"}
         </p>
         <div 
@@ -239,14 +239,14 @@ const ContactSection = ({ t }: { t: ContactType }) => {
                   
                   <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
                     <div className="col-span-2 sm:col-span-1">
-                      <Label htmlFor="firstName">
+                      <Label htmlFor="firstName" className='text-base' >
                         {t?.form?.firstName ?? "First Name"} *
                       </Label>
                       <Input
                         name="firstName"
                         placeholder={t?.form?.firstName ?? "First name"}
                         id="firstName"
-                        className="mt-2 bg-white h-10 shadow-none"
+                        className="mt-2 bg-white h-10 shadow-none placeholder:text-sm md:placeholder:text-base"
                         required
                         minLength={2}
                         disabled={isPending}
@@ -255,14 +255,14 @@ const ContactSection = ({ t }: { t: ContactType }) => {
                     </div>
 
                     <div className="col-span-2 sm:col-span-1">
-                      <Label htmlFor="lastName">
+                      <Label htmlFor="lastName" className='text-base'>
                         {t?.form?.lastName ?? "Last Name"} *
                       </Label>
                       <Input
                         name="lastName"
                         placeholder={t?.form?.lastName ?? "Last name"}
                         id="lastName"
-                        className="mt-2 bg-white h-10 shadow-none"
+                        className="mt-2 bg-white h-10 shadow-none "
                         required
                         minLength={2}
                         disabled={isPending}
@@ -271,7 +271,7 @@ const ContactSection = ({ t }: { t: ContactType }) => {
                     </div>
 
                     <div className="col-span-2">
-                      <Label htmlFor="email">
+                      <Label htmlFor="email" className='text-base'>
                         {t?.form?.email ?? "Email"} *
                       </Label>
                       <Input
@@ -287,7 +287,7 @@ const ContactSection = ({ t }: { t: ContactType }) => {
                     </div>
 
                     <div className="col-span-2">
-                      <Label htmlFor="message">
+                      <Label htmlFor="message" className='text-base'>
                         {t?.form?.message ?? "Message"} *
                       </Label>
                       <Textarea
@@ -313,7 +313,7 @@ const ContactSection = ({ t }: { t: ContactType }) => {
                         disabled={isPending}
                         aria-required="true"
                       />
-                      <Label htmlFor={termsId} className="text-sm">
+                      <Label htmlFor={termsId} className="text-sm md:text-base">
                         {t?.form?.terms ?? "You agree to our"}
                         <span className="underline ml-1">
                           {t?.form?.terms ? "" : "terms and conditions"}

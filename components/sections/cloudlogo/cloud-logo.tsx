@@ -59,7 +59,7 @@ const CloudLogo = memo(function CloudLogo({
             <InfiniteSlider 
               speedOnHover={20} 
               speed={40} 
-              gap={112} 
+              gap={90} 
               reverse={direction === "left"}
               className="max-md:speed-60"
               aria-live="polite" 

@@ -21,25 +21,25 @@ const HeroSection = ({ t }: { t: HeroType }) => {
               href="https://en.wikipedia.org/wiki/Web3" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[.6rem] md:text-sm"
+              className="text-[.7rem] md:text-sm"
             >
               Web 3.0 <ArrowUpRight className="ml-1 size-4" />
             </Link>
           </Badge>
           
-          <h1 className="p-1 mt-6 text-[2.625rem] md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
+          <h1 className="p-1 mt-6 text-[2.55rem] md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
             {t?.name ?? "Ali Naghi Hossaini"}
-            <span className="block text-slate-500 mt-4 text-4xl md:text-5xl lg:text-6xl">
+            <span className="block text-slate-500 mt-4 text-[2.4rem] md:text-5xl lg:text-6xl">
               {t?.title ?? "Full Stack Developer"}
             </span>
           </h1>
           
-          <p className="max-w-xl md:max-w-full mt-7 text-slate-400 text-sm md:text-lg lg:text-xl">
+          <p className="max-w-xl md:max-w-full mt-7 text-slate-400 text-[.94rem] md:text-lg lg:text-xl px-1">
             {t?.description ?? "Passionate about creating modern web applications with cutting-edge technologies. Ready to bring your ideas to life with clean code and innovative solutions."}
           </p>
           
           <div className="mt-12 flex items-center justify-center gap-4">
-            <Button size="lg" className="rounded-full px-4 md:py-5.5 md:px-12">
+            <Button size="lg" className="rounded-full  px-4 md:py-5.5 md:px-12">
               <Link 
                 href="https://github.com/Hossaini1" 
                 className="flex justify-center items-center gap-2 text-[0.68rem] md:text-base" 
