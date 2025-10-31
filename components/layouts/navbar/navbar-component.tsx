@@ -4,6 +4,7 @@ import { ModeToggle } from "../../shared/togglemode/toggleMode";
 import SelectLang from "../../shared/selectlang/selectLang";
 import Avatar from "../../shared/avatar/avatar-component";
 import { NavAndLanguagesType } from "@/types/dictionary-types";
+import Link from "next/link";
 
 const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
   return (
@@ -16,9 +17,9 @@ const NavbarComponent = ({ t }: { t: NavAndLanguagesType }) => {
     >
       <div className="h-full flex items-center justify-between max-w-(--breakpoint-lg) mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo/Avatar */}
-        <div itemScope itemType="https://schema.org/Person">
+        <Link href="#home" itemScope itemType="https://schema.org/Person">
           <Avatar />
-        </div>
+        </Link>
 
         {/* Desktop navigation*/}
         <div className="flex items-center gap-8" role="menubar" aria-label="Main menu">
