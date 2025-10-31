@@ -31,7 +31,7 @@ export function ScrollNavigation() {
         className={cn(
           'h-auto w-auto rounded-full p-0 shadow-none bg-transparent',
           'text-slate-900 dark:text-neutral-300 dark:hover:text-white',
-          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-114 '
+          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-112.5 '
         )}
         aria-label="Scroll to top"
         size="icon"
@@ -50,7 +50,7 @@ export function ScrollNavigation() {
         className={cn(
           'h-auto w-auto rounded-full p-0 shadow-none bg-transparent ',
           'text-slate-900 dark:text-neutral-300 dark:hover:text-white',
-          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-114'
+          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-112.5'
         )}
         aria-label="Scroll to middle"
         size="icon"
@@ -69,7 +69,7 @@ export function ScrollNavigation() {
         className={cn(
           'h-auto w-auto rounded-full p-0 shadow-none bg-transparent',
           'text-slate-900 dark:text-neutral-300 dark:hover:text-white',
-          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-114'
+          'group relative transition-all duration-300 scale-90 md:scale-110 hover:scale-112.5'
         )}
         aria-label="Scroll to bottom"
         size="icon"

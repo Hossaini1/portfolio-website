@@ -27,7 +27,7 @@ const HeroSection = ({ t }: { t: HeroType }) => {
             </Link>
           </Badge>
           
-          <h1 className="p-1 mt-6 text-[2.55rem] md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
+          <h1 className="p-1 mt-6 text-[2.54rem] md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
             {t?.name ?? "Ali Naghi Hossaini"}
             <span className="block text-slate-500 mt-4 text-[2.4rem] md:text-5xl lg:text-6xl">
               {t?.title ?? "Full Stack Developer"}
