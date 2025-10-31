@@ -132,10 +132,10 @@ const ContactInfoSection = memo(function ContactInfoSection({ t }: { t: ContactT
         </p>
         <Link
           className="font-medium text-blue-500 hover:text-blue-400 visited:text-purple-500 visited:hover:text-purple-400 transition-colors text-base md:text-lg hover:underline focus:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
-          href="https://maps.google.com"
+          href="https://www.google.com/maps/place/Ratingen/@51.2279197,6.8774046,10.75z/data=!4m6!3m5!1s0x47b8c5fa04fec05b:0x42760fc4a2a75c0!8m2!3d51.2964148!4d6.8401844!16zL20vMDN5OTI4?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Open location: ${t?.office?.address ?? "Germany, North Rhine-Westphalia"} in Google Maps`}
+          aria-label={`Open location: ${t?.office?.address ?? "Germany, North Rhine-Westphalia, Ratingen"} in Google Maps`}
         >
           {t?.office?.address ?? "Germany, North Rhine-Westphalia"}
         </Link>
