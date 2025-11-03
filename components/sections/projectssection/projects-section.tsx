@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { useMemo, memo } from "react";
 
-import portfolioImage from "@/public/images/portfolio.png";
+import pizzaShopImage from "@/public/images/pizza-shop.png";
 import vpnImage from "@/public/images/vpn-site.png";
 import translateImage from "@/public/images/vue-translate.png";
 
@@ -23,19 +23,19 @@ interface ProjectsSectionProps {
 }
 
 const PROJECT_IMAGES = {
-  portfolio: portfolioImage,
+  pizzaShop: pizzaShopImage,
   vpn: vpnImage,
   translate: translateImage,
 } as const;
 
 const STATIC_PROJECTS: Project[] = [
   {
-    title: "Portfolio",
-    description: "Modern and responsive presentation website",
+    title: "Pizza Shop",
+    description: "Modern and responsive Pizza Shop Website",
     category: "Frontend",
-    technologies: ["HTML", "CSS", "Javascript"],
-    image: PROJECT_IMAGES.portfolio,
-    demoUrl: "https://hossaini1.github.io/portfolio/",
+    technologies: ["PHP", "Laravel", "Alpine.js"],
+    image: PROJECT_IMAGES.pizzaShop,
+    demoUrl: "https://github.com/Hossaini1/fullstack-laravel-food-app",
   },
   {
     title: "Vuejs App Translate",
@@ -67,6 +67,10 @@ const TECH_VARIANTS = {
   sass: "sass",
   vite: "vite",
   "multilanguages markdown": "multilanguage",
+    laravel: "laravel",
+  php: "php",
+  "alpine.js": "alpine",
+  alpine: "alpine",
 } as const;
 
 const ProjectCard = memo(({ project }: { project: Project }) => {

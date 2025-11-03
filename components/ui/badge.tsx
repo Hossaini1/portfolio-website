@@ -35,7 +35,10 @@ const badgeVariants = cva(
         multilanguage:
           "border-transparent bg-[#667EEA] text-white [a&]:hover:bg-[#667EEA]/90",
         sass: "border-transparent bg-[#CC6699] text-white [a&]:hover:bg-[#CC6699]/90",
-        vite: "border-transparent bg-[#646CFF] text-white [a&]:hover:bg-[#646CFF]/90"
+        vite: "border-transparent bg-[#646CFF] text-white [a&]:hover:bg-[#646CFF]/90",
+        laravel: "border-transparent bg-[#FF2D20] text-white [a&]:hover:bg-[#FF2D20]/90",
+        php: "border-transparent bg-[#777BB4] text-white [a&]:hover:bg-[#777BB4]/90",
+        alpine: "border-transparent bg-[#8BC0D0] text-black [a&]:hover:bg-[#8BC0D0]/90"
       },
     },
     defaultVariants: {
