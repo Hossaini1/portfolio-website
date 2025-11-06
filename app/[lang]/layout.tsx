@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
+import { Analytics } from '@vercel/analytics/next';
+
 
 // Lazy load components for better performance
 const ScrollNavigation = dynamic(
@@ -146,6 +148,7 @@ export default async function RootLayout({
             </Link>
             <ScrollNavigation />
             {children}
+            <Analytics />
           </ThemeProvider>
         </Suspense>
       </body>
