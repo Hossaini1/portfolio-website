@@ -27,9 +27,9 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    en: "Ali Hossaini - Full Stack Developer Portfolio",
-    de: "Ali Hossaini - Full Stack Developer Portfolio",
-    fa: "علی حسینی - نمونه کارهای توسعه دهنده فول استک",
+    en: "Ali Hossaini - Home Page",
+    de: "Ali Hossaini - Startseite",
+    fa: "علی حسینی - صفحه اصلی",
   };
 
   const descriptions = {
