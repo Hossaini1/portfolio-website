@@ -115,7 +115,6 @@ export const createNavbarConfig = (t: NavAndLanguagesType["Nav"]) => {
   return { navbarItems, megaMenuItems }
 }
 
-// ✅ Alle Icons direkt zugeordnet (keine dynamische Imports mehr)
 export const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ChevronsLeftRightEllipsis,
   Palette,

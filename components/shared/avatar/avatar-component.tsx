@@ -11,7 +11,6 @@ import profileImage from "@/public/images/profile-image.png";
 export default function AvatarComponent() {
   return (
     <Tooltip delayDuration={100}>
-      
         <TooltipTrigger asChild>
           <Avatar>
             <Image

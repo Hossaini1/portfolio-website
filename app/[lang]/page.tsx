@@ -94,6 +94,17 @@ function LoadingFallback({ componentName }: { componentName: string }) {
   );
 }
 
+// Lazy load components for better performance
+const ScrollNavigation = dynamic(
+  () =>
+    import("@/components/ui/scroll-navigation.tsx").then(
+      (mod) => mod.ScrollNavigation
+    ),
+  {
+    loading: () => <div className="h-16 bg-transparent" aria-hidden="true" />,
+  }
+);
+
 export default async function Home({
   params,
 }: {
@@ -104,7 +115,7 @@ export default async function Home({
 
   return (
     <>
-      <header role="banner">
+      <header role="header">
         <Suspense fallback={<div className="h-16 bg-background animate-pulse" aria-label="Loading navigation" />}>
           <NavbarComponent t={t} />
         </Suspense>
@@ -122,31 +133,27 @@ export default async function Home({
           </div>
         )}
         
-        {/* Hero section */}
         <Suspense fallback={<LoadingFallback componentName="hero section" />}>
           <HeroSection t={t.Hero} />
         </Suspense>
         
-        {/* About section */}
         <Suspense fallback={<LoadingFallback componentName="about section" />}>
           <AboutSection t={t.About} />
         </Suspense>
         
-        {/* Projects section */}
         <Suspense fallback={<LoadingFallback componentName="projects" />}>
           <ProjectsSection t={t.ProjectsSection} />
         </Suspense>
 
-        {/* FAQ - already optimized, no lazy loading */}
         <FaqComponent t={t.faq} />
         
-        {/* Contact section */}
         <Suspense fallback={<LoadingFallback componentName="contact form" />}>
           <ContactSection t={t.Contact} />
         </Suspense>
+
+        <ScrollNavigation />
       </main>
       
-      {/* Footer */}
       <Suspense fallback={<div className="h-20 bg-gray-100 animate-pulse" aria-label="Loading footer" />}>
         <FooterSection t={t.Footer} />
       </Suspense>
