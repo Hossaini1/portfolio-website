@@ -39,7 +39,7 @@ const HeroSection = ({ t }: { t: HeroType }) => {
           </p>
           
           <div className="mt-12 flex items-center justify-center gap-4">
-            <Button size="lg" className="rounded-full  px-4 md:py-5.5 md:px-12">
+            <Button size="lg" className="rounded-full px-4 md:py-5.5 md:px-12">
               <Link 
                 href="https://github.com/Hossaini1" 
                 className="flex justify-center items-center gap-2 text-[0.68rem] md:text-base" 

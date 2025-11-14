@@ -14,31 +14,31 @@ const SOCIAL_LINKS = [
   { 
     Icon: Linkedin, 
     linkDestination: "https://www.linkedin.com/in/hossaini/",
-    linkLabel: "Visit our LinkedIn",
+    linkLabel: "LinkedIn Profil besuchen",
     uniqueId: "linkedin"
   },
   { 
     Icon: FacebookIcon, 
     linkDestination: "https://www.facebook.com/profile.php?id=61583266311562",
-    linkLabel: "Visit our Facebook",
+    linkLabel: "Facebook Profil besuchen",
     uniqueId: "facebook"
   },
   { 
     Icon: YoutubeIcon, 
     linkDestination: "https://www.youtube.com/@AliNaghiHossaini",
-    linkLabel: "Visit our YouTube", 
+    linkLabel: "YouTube Kanal besuchen", 
     uniqueId: "youtube"
   },
   { 
     Icon: Instagram, 
     linkDestination: "https://www.instagram.com/alinaghihossaini/",
-    linkLabel: "Visit our Instagram",
+    linkLabel: "Instagram Profil besuchen",
     uniqueId: "instagram"
   },
   { 
     Icon: GithubIcon, 
     linkDestination: "https://github.com/Hossaini1",
-    linkLabel: "Visit our GitHub",
+    linkLabel: "GitHub Profil besuchen",
     uniqueId: "github"
   },
 ] as const;
@@ -55,7 +55,7 @@ const FooterSection = ({ t }: { t: FooterType }) => {
       linkPath: "/privacy",
     },
     {
-      linkTitle: t?.links?.contact ?? "help", 
+      linkTitle: t?.links?.contact ?? "Help", 
       linkPath: "/#ask-questions",
     },
   ];
@@ -65,32 +65,28 @@ const FooterSection = ({ t }: { t: FooterType }) => {
 
   return (
     <footer 
-      className="flex flex-col bg-muted mt-17 md:mt-27 lg:mt-34"
+      className="flex flex-col bg-muted dark:bg-gray-900 mt-17 md:mt-27 lg:mt-34"
       role="contentinfo"
-      aria-label="Site footer"
-      itemScope
-      itemType="https://schema.org/WPFooter"
+      aria-label="Website Fußzeile"
     >
-      <div className="grow bg-muted" />
-      <div className="border-t">
+      <div className="grow bg-muted dark:bg-gray-900" />
+      <div className="border-t border-gray-300 dark:border-gray-700">
         <div className="max-w-(--breakpoint-xl) mx-auto">
           <div className="py-12 flex flex-col-reverse sm:flex-row items-center md:items-start justify-between gap-x-8 gap-y-8 px-6 xl:px-0">
             {/* Links Section */}
             <nav 
               className="flex flex-col items-center md:items-start text-center md:text-left"
-              aria-label="Footer navigation"
+              aria-label="Rechtliche Links"
             >
               <ul 
                 className="mt-6 flex items-center gap-4 flex-wrap justify-center md:justify-start"
-                role="list"
               >
                 {footerLinks.map(({ linkTitle, linkPath }) => (
-                  <li key={linkPath} role="none">
+                  <li key={linkPath}>
                     <Link
                       href={linkPath}
-                      className="text-muted-foreground hover:text-foreground text-base transition-colors duration-200 focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+                      className="text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white text-base transition-colors duration-200 focus:text-black dark:focus:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm px-2 py-1 font-medium"
                       prefetch={false}
-                      role="menuitem"
                     >
                       {linkTitle}
                     </Link>
@@ -102,22 +98,13 @@ const FooterSection = ({ t }: { t: FooterType }) => {
             {/* Social Media Section */}
             <div 
               className="flex flex-col items-center md:items-start text-center md:text-left"
-              itemScope
-             
             >
-              <h4 className="font-medium text-lg md:text-xl sr-only">
+              <h4 className="font-semibold text-lg md:text-xl text-gray-900 dark:text-white">
                 {t?.socialMedia ?? "Social Media"}
               </h4>
-              <p 
-                className="font-medium text-lg md:text-xl"
-                aria-hidden="true"
-              >
-                {t?.socialMedia ?? "Social Media"}
-              </p>
               <div 
-                className="flex items-center gap-5 text-muted-foreground mt-6 justify-center md:justify-start"
-                role="list"
-                aria-label="Social media links"
+                className="flex items-center gap-5 mt-6 justify-center md:justify-start"
+                aria-label="Social Media Links"
               >
                 {SOCIAL_LINKS.map(({ Icon, linkDestination, linkLabel, uniqueId }) => (
                   <Link 
@@ -125,29 +112,26 @@ const FooterSection = ({ t }: { t: FooterType }) => {
                     href={linkDestination} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:scale-110 transition-transform duration-200 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm p-1"
+                    className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-200 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-sm p-1"
                     aria-label={linkLabel}
-                    role="listitem"
-                    itemProp="sameAs"
                   >
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                    <Icon className="h-6 w-6" aria-hidden="true" />
                   </Link>
                 ))}
               </div>
             </div>
           </div>
           
-          <Separator aria-hidden="true" />
+          <Separator aria-hidden="true" className="bg-gray-300 dark:bg-gray-700" />
           
           {/* Copyright Section */}
           <div className="py-8 text-center md:text-start">
             <span 
-              className="text-muted-foreground text-base px-0 md:px-6 lg:px-0"
-              itemProp="copyrightYear"
+              className="text-gray-700 dark:text-gray-300 text-base px-0 md:px-6 lg:px-0 font-medium"
             >
               &copy; {currentYear}{" "}
-              <span itemProp="copyrightHolder">
-                {t?.copyright ?? "All rights reserved."}
+              <span className="text-gray-900 dark:text-white">
+                {t?.copyright ?? "Alle Rechte vorbehalten."}
               </span>
             </span>
           </div>
