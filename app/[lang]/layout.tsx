@@ -6,7 +6,6 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import { Analytics } from '@vercel/analytics/next';
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -14,23 +13,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
 
-  // --- NEUE, DETAILLIERTERE TITEL ---
   const titles = {
-    // URL: alihossaini.de/en
     en: "Ali Naghi Hossaini | Full Stack Developer Portfolio (Next.js, React)",
-    // URL: alihossaini.de/de
     de: "Ali Naghi Hossaini | Full Stack Entwickler Portfolio (Next.js, React)",
-    // URL: alihossaini.de/fa
     fa: "علی نقی حسینی | نمونه کار توسعه دهنده فول استک (Next.js, React)",
   };
 
-  // --- NEUE, SEO-OPTIMIERTE BESCHREIBUNGEN ---
   const descriptions = {
-    // Beschreibung auf Englisch
     en: "Full Stack Developer Ali Naghi Hossaini: Expert in Next.js, React, and clean code. Explore 50+ modern web projects, from responsive frontends to robust backend solutions.",
-    // Beschreibung auf Deutsch
     de: "Full Stack Entwickler Ali Naghi Hossaini: Experte für Next.js, React & sauberen Code. Entdecken Sie 50+ moderne Webprojekte, von responsiven Frontends bis zu robusten Backend-Lösungen.",
-    // Beschreibung auf Farsi
     fa: "علی نقی حسینی، توسعه دهنده فول استک: متخصص در Next.js، ری اکت و کدنویسی تمیز. بیش از ۵۰ پروژه وب مدرن، از فرانت‌اند واکنش‌گرا تا راه حل‌های بک‌اند قوی را مشاهده کنید.",
   };
 
@@ -68,7 +59,6 @@ export async function generateMetadata({
         en: "/en",
         de: "/de",
         fa: "/fa",
-        // x-default leitet Suchmaschinen zur besten Sprachversion weiter
         "x-default": "/",
       },
     },
