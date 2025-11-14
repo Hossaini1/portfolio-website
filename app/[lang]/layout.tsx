@@ -14,35 +14,49 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
 
+  // --- NEUE, DETAILLIERTERE TITEL ---
   const titles = {
-    en: "Home Page",
-    de: "Startseite",
-    fa: "صفحه اصلی",
+    // URL: alihossaini.de/en
+    en: "Ali Naghi Hossaini | Full Stack Developer Portfolio (Next.js, React)",
+    // URL: alihossaini.de/de
+    de: "Ali Naghi Hossaini | Full Stack Entwickler Portfolio (Next.js, React)",
+    // URL: alihossaini.de/fa
+    fa: "علی نقی حسینی | نمونه کار توسعه دهنده فول استک (Next.js, React)",
   };
 
+  // --- NEUE, SEO-OPTIMIERTE BESCHREIBUNGEN ---
   const descriptions = {
-    en: "Web Developer specializing in modern web applications with React, Next.js, and cutting-edge technologies. Browse my projects and get in touch.",
-    de: "Web Developer spezialisiert auf moderne Webanwendungen mit React, Next.js und innovativen Technologien. Entdecken Sie meine Projekte und kontaktieren Sie mich.",
-    fa: "توسعه دهنده فول استک متخصص در برنامه های وب مدرن با ری اکت، نکست جی اس و تکنولوژی های پیشرفته. مشاهده پروژه ها و تماس با من.",
+    // Beschreibung auf Englisch
+    en: "Full Stack Developer Ali Naghi Hossaini: Expert in Next.js, React, and clean code. Explore 50+ modern web projects, from responsive frontends to robust backend solutions.",
+    // Beschreibung auf Deutsch
+    de: "Full Stack Entwickler Ali Naghi Hossaini: Experte für Next.js, React & sauberen Code. Entdecken Sie 50+ moderne Webprojekte, von responsiven Frontends bis zu robusten Backend-Lösungen.",
+    // Beschreibung auf Farsi
+    fa: "علی نقی حسینی، توسعه دهنده فول استک: متخصص در Next.js، ری اکت و کدنویسی تمیز. بیش از ۵۰ پروژه وب مدرن، از فرانت‌اند واکنش‌گرا تا راه حل‌های بک‌اند قوی را مشاهده کنید.",
   };
+
+  // Hilfsfunktion zur sicheren Abfrage der Sprache
+  const currentLang = (lang as keyof typeof titles) || "en";
 
   return {
     title: {
-      default: titles[lang as keyof typeof titles] || titles.en,
-      template: `%s | ${titles[lang as keyof typeof titles] || titles.en}`,
+      default: titles[currentLang],
+      // Fügt den individuellen Seitentitel hinzu, z.B. "Projekte | Ali Naghi Hossaini..."
+      template: `%s | ${titles[currentLang]}`, 
     },
-    description:
-      descriptions[lang as keyof typeof descriptions] || descriptions.en,
+    description: descriptions[currentLang],
     keywords: [
-      "Web developer",
-      "full stack developer",
-      "web development",
-      "react",
-      "nextjs",
-      "portfolio",
-      "frontend developer",
-      "backend developer",
-      "modern web applications",
+      "Full Stack Developer",
+      "Webentwickler",
+      "Next.js Portfolio",
+      "React Developer",
+      "TypeScript",
+      "Laravel",
+      "Frontend Developer",
+      "Backend Developer",
+      "Web Development",
+      "Ali Naghi Hossaini",
+      "moderne Webanwendungen",
+      "Web Developer",
     ],
     authors: [{ name: "Ali Naghi Hossaini" }],
     creator: "Ali Naghi Hossaini",
@@ -54,6 +68,7 @@ export async function generateMetadata({
         en: "/en",
         de: "/de",
         fa: "/fa",
+        // x-default leitet Suchmaschinen zur besten Sprachversion weiter
         "x-default": "/",
       },
     },
@@ -70,22 +85,20 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Portfolio Website Ali Naghi Hossaini",
-      title: titles[lang as keyof typeof titles] || titles.en,
-      description:
-        descriptions[lang as keyof typeof descriptions] || descriptions.en,
+      siteName: "Ali Naghi Hossaini | Full Stack Developer Portfolio",
+      title: titles[currentLang],
+      description: descriptions[currentLang],
       locale: lang === "fa" ? "fa_IR" : lang === "de" ? "de_DE" : "en_US",
       alternateLocale: ["en_US", "de_DE", "fa_IR"],
     },
     twitter: {
       card: "summary_large_image",
-      title: titles[lang as keyof typeof titles] || titles.en,
-      description:
-        descriptions[lang as keyof typeof descriptions] || descriptions.en,
+      title: titles[currentLang],
+      description: descriptions[currentLang],
       creator: "@alihossaini",
     },
     verification: {
-      // Add Google Search Console verification here
+      // Füge hier die Google Search Console Verifizierung hinzu
     },
   };
 }
