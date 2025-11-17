@@ -28,7 +28,7 @@ const HeroSection = ({ t }: { t: HeroType }) => {
           </Badge>
           
           <h1 className="p-1 mt-6 text-[2.46rem] md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
-            {t?.name ?? "Ali Naghi Hossaini"}
+            {t?.name ?? "Ali Naghi Hossaini "}
             <span className="block text-slate-500 mt-4 text-[2.32rem] md:text-5xl lg:text-6xl">
               {t?.title ?? "Full Stack Developer"}
             </span>
@@ -42,7 +42,7 @@ const HeroSection = ({ t }: { t: HeroType }) => {
             <Button size="lg" className="rounded-full px-4 md:py-5.5 md:px-12">
               <Link 
                 href="https://github.com/Hossaini1" 
-                className="flex justify-center items-center gap-2 text-[0.68rem] md:text-base" 
+                className="flex justify-center items-center gap-2 text-[0.82rem] md:text-base" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
