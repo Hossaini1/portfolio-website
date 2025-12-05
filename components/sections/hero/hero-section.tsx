@@ -18,12 +18,12 @@ const HeroSection = ({ t }: { t: HeroType }) => {
             asChild
           >
             <Link 
-              href="https://en.wikipedia.org/wiki/Web3" 
+              href="https://en.wikipedia.org/wiki/Web_development" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[.7rem] md:text-sm"
             >
-              Web 3.0 <ArrowUpRight className="ml-1 size-4" />
+              Web Development <ArrowUpRight className="ml-1 size-4" />
             </Link>
           </Badge>
           
